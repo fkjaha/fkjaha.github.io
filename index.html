@@ -1,7 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YourName - Indie Game Developer</title>
+  <style>
+    /* Basic reset */
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #121212;
+      color: #eee;
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.3rem;
+      color: #61dafb;
+    }
+    header p {
+      font-style: italic;
+      color: #bbb;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #61dafb;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #61dafb;
+      padding-bottom: 0.2rem;
+    }
+    ul.projects {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul.projects li {
+      margin-bottom: 1rem;
+      background: #1e1e1e;
+      padding: 1rem;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    ul.projects li:hover {
+      background: #2a2a2a;
+    }
+    a.project-link {
+      color: #61dafb;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.project-link:hover {
+      text-decoration: underline;
+    }
+    .status {
+      font-size: 0.9rem;
+      color: #ffa500;
+      font-weight: bold;
+      margin-left: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 3rem;
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+  <header>
+    <h1>Your Name</h1>
+    <p>Indie Game Developer — PC & Mobile Games</p>
+  </header>
+
+  <section>
+    <h2>Current Project <span class="status">(In Development)</span></h2>
+    <ul class="projects">
+      <li>
+        <a href="https://link-to-current-project.com" class="project-link" target="_blank" rel="noopener noreferrer">
+          Project Name
+        </a>
+        <p>Short description of your current project. What makes it unique or exciting?</p>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Completed Games</h2>
+    <ul class="projects">
+      <li>
+        <a href="https://link-to-game1.com" class="project-link" target="_blank" rel="noopener noreferrer">Game Title 1</a>
+        <p>Brief description of this game, genre, platforms, or other details.</p>
+      </li>
+      <li>
+        <a href="https://link-to-game2.com" class="project-link" target="_blank" rel="noopener noreferrer">Game Title 2</a>
+        <p>Brief description of this game, genre, platforms, or other details.</p>
+      </li>
+      <!-- Add more games here -->
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Your Name — Built with GitHub Pages</p>
+  </footer>
 </body>
 </html>
