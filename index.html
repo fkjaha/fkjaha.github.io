@@ -2,148 +2,258 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fkjaha (Indie Dev) </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fkjaha Dev</title>
   <style>
-    /* Basic reset */
-    * {
-      box-sizing: border-box;
-      margin: 0; padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
     body {
-      background: #121212;
-      color: #eee;
-      line-height: 1.6;
-      padding: 20px;
-      max-width: 900px;
-      margin: 0 auto;
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #fff;
     }
+
     header {
       text-align: center;
-      margin-bottom: 2rem;
+      padding: 2rem 1rem;
+      background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
     }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.3rem;
-      color: #61dafb;
+
+    h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2.8rem;
     }
-    header p {
-      font-style: italic;
-      color: #bbb;
+
+    .intro {
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
-    section {
-      margin-bottom: 2rem;
-    }
-    .centered-frame {
-	  display: flex;
-	  justify-content: center;
-	  margin: 1rem 0;
-	}	
-    h2 {
-      color: #61dafb;
+
+    .profile-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
       margin-bottom: 1rem;
-      border-bottom: 2px solid #61dafb;
-      padding-bottom: 0.2rem;
     }
-    ul.projects {
-    margin: auto;
-      list-style: none;
-      padding-left: 0;
-    }
-    ul.projects li {
-      margin-bottom: 1rem;
-      background: #1e1e1e;
-      padding: 1rem;
-      border-radius: 8px;
+
+    .profile-links a {
+      color: #fff;
+      background: #444;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      text-decoration: none;
       transition: background 0.3s ease;
     }
-    ul.projects li:hover {
-      background: #2a2a2a;
+
+    .profile-links a:hover {
+      background: #666;
     }
-    a.project-link {
-      color: #61dafb;
-      text-decoration: none;
-      font-weight: bold;
+
+    .section {
+      padding: 2rem 1rem;
     }
-    a.project-link:hover {
-      text-decoration: underline;
+
+    h2 {
+      font-size: 2rem;
+      text-align: left;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, #ff8c00, #ffa500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    .status {
-      font-size: 0.9rem;
-      color: #ffa500;
-      font-weight: bold;
-      margin-left: 0.5rem;
+
+    .divider {
+	  width: 100%;
+      /*width: 100px;*/
+      height: 4px;
+      background: linear-gradient(to right, #ff8c00, #ffa500);
+      margin: 1.5rem 0 1.5rem ;
+      border-radius: 2px;
     }
-    footer {
+
+    .grid-wrapper {
+      /*max-width: 1200px;*/
+      margin: 0 auto;
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .game {
+      position: relative;
+      /*border-radius: 16px;*/
+      overflow: hidden;
+      /*height: 353px;*/
+	  width: 100%;
+	  padding-top: 57.3%;
+    }
+
+    .game::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(1px) brightness(0.8);
+	  transform: scale(1);
+      transition: filter 0.4s ease, transform 0.4s ease;
+      z-index: 0;
+    }
+
+    .game:hover::before {
+      filter: blur(0) brightness(1);
+      transform: scale(1.01);
+    }
+
+    .game[style*='background-image']::before {
+      background-image: inherit;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      /*background: rgba(0, 0, 0, 0.5);*/
+      padding: 0.5rem;
       text-align: center;
-      font-size: 0.9rem;
-      color: #555;
-      margin-top: 3rem;
+      z-index: 1;
     }
-    @media (max-width: 600px) {
-      body {
-        padding: 15px;
-      }
-      header h1 {
-        font-size: 2rem;
-      }
+
+    .game-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .buttons a {
+      background: #333;
+      color: #fff;
+      padding: 0.3rem 0.6rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: background 0.3s;
+    }
+
+    .buttons a:hover {
+      background: #555;
     }
   </style>
+  <script>
+	function createGameElement(project) {
+	  let game = `
+	  <div class="game" style="background-image: url(${project.image}">
+		<div class="overlay">
+		  <div class="game-title">${project.title}</div>
+		  <div class="buttons">
+			${project.links.map(link => `<a href="${link.url}" target="_blank">${link.name}</a>`).join('')}
+		  </div>
+		</div>
+		</div>
+	  `;
+
+	  return game;
+	}
+	
+	const projects = [
+    {
+	  title: "Flashing Dark",
+	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2838490/capsule_616x353.jpg?t=1746367778);",
+	  links: [
+		{ name: "Steam", url: "#" },
+	  ]
+	},
+	{
+	  title: "Utter Takedown",
+	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2338500/capsule_616x353.jpg?t=1746367739)",
+	  links: [
+		{ name: "Steam", url: "#" },
+	  ]
+	},
+	{
+	  title: "Nevermind This",
+	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2181100/capsule_616x353.jpg?t=1746367686)",
+	  links: [
+		{ name: "Steam", url: "#" },
+	  ]
+	},
+	{
+	  title: "Objective H.A.S.T.E.",
+	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1631170/capsule_616x353.jpg?t=1746367957)",
+	  links: [
+		{ name: "Steam", url: "#" },
+	  ]
+	}
+	];
+
+  </script>
 </head>
 <body>
-  <header>
+  <header style="background-color: rgba(0.5, 0.5, 0.5, 1); background-size: cover; background-image: url(https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3686460/2f1d8d90c05a6b3c6c277d0e03d529bf04957acf/library_hero_2x.jpg?t=1746756738);">
     <h1>Fkjaha (Andrii Taras)</h1>
-    <p>Indie Game Developer — PC & Mobile Games</p>
+    <p class="intro">I'm an indie game developer making PC/Mobile games. Here you can find my published and in-progress projects. Follow me on these platforms or get in touch!</p>
+    <div class="profile-links">
+      <a href="#">Steam</a>
+      <a href="#">itch.io</a>
+      <a href="#">GOG</a>
+      <a href="#">Twitter</a>
+      <a href="#">Email</a>
+    </div>
   </header>
 
-  <section>
-    <h2>Active Projects <span class="status">(In Development)</span></h2>
-    <ul class="projects">
-      <li>
-	      <div class="centered-frame">
-	         <iframe src="https://store.steampowered.com/widget/3686460/" frameborder="0" width="646" height="190"></iframe>
-	      </div>
-      </li>
-    </ul>
-  </section>
+  <div class="section">
+    <h2>Published Games</h2>
+    <div class="divider"></div>
+	
+    <div class="grid-wrapper">
+      <div class="grid">
+        
+		<script>
+		
+			projects.forEach(project => {
+			  document.write(createGameElement(project));
+			});
+			
+		</script>
+		
+      </div>
+    </div>
+  </div>
 
-  <section>
-    <h2>PC Games</h2>
-    <ul class="projects">
-      <li>
-	      <div class="centered-frame">
-	         <iframe src="https://store.steampowered.com/widget/2838490/" frameborder="0" width="646" height="190"></iframe>
-	      </div>
-	      <p>2024-2025</p>
-      </li>
-
-      <li>
-	      <div class="centered-frame">
-	         <iframe src="https://store.steampowered.com/widget/2338500/" frameborder="0" width="646" height="190"></iframe>
-	      </div>
-	      <p>2023-2024</p>
-      </li>
-      <li>
-	      <div class="centered-frame">
-	         <iframe src="https://store.steampowered.com/widget/2181100/" frameborder="0" width="646" height="190"></iframe>
-	      </div>
-	      <p>2023-2024</p>
-      </li>
-      <li>
-      
-	      <div class="centered-frame">
-	         <iframe src="https://store.steampowered.com/widget/1631170/" frameborder="0" width="646" height="190"></iframe>
-	      </div>
-	      <p>2021-2022</p>
-      </li>
-
-      <!-- Add more games here -->
-    </ul>
-  </section>
-
-  <footer>
-    <p>© 2025 Fkjaha (Andrii Taras)</p>
-  </footer>
+  <div class="section">
+    <h2>In-Progress Games</h2>
+    <div class="divider"></div>
+    <div class="grid-wrapper">
+      <div class="grid">
+        <div class="game" style="background-image: url('game2-poster.jpg');">
+          <div class="overlay">
+            <div class="game-title">Upcoming Game</div>
+            <div class="buttons">
+              <a href="#">Steam</a>
+              <a href="#">itch.io</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
