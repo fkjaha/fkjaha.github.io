@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fkjaha Dev</title>
+  <link rel="icon" type="image/png" href="https://yt3.googleusercontent.com/ytc/AIdro_mmGv72A8cWtKlKcP1cpqlH56j5a9amsbI1IJMh0xa7Dw=s160-c-k-c0x00ffffff-no-rj">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #fff;
+    }
+
+    header {
+
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
+    }
+
+    h1 {
+		  text-shadow: 
+	  3px 3px 3px rgba(0, 0, 0, 1),
+	  -3px -3px 3px rgba(0, 0, 0, 1),
+	  3px -3px 3px rgba(0, 0, 0, 1),
+	  -3px 3px 3px rgba(0, 0, 0, 1);
+      margin-bottom: 0.5rem;
+      font-size: 2.8rem;
+    }
+
+    .intro {
+		  text-shadow: 
+	  3px 3px 3px rgba(0, 0, 0, 1),
+	  -3px -3px 3px rgba(0, 0, 0, 1),
+	  3px -3px 3px rgba(0, 0, 0, 1),
+	  -3px 3px 3px rgba(0, 0, 0, 1);
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .profile-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .profile-links a {
+      color: #fff;
+      background: #111;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .profile-links a:hover {
+      background: #555;
+    }
+
+    .section {
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      text-align: left;
+      margin-bottom: 0.5rem;
+      margin-left: 12.5%;
+      /*background: linear-gradient(90deg, #ff8c00, #ffa500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;*/
+    }
+
+    .divider {
+      margin: 0 auto 1.5rem;
+	  width: 75%;
+      /*width: 100px;*/
+      height: 4px;
+      /*background: linear-gradient(to right, #ff8c00, #ffa500);*/
+	 background: white;
+      /*margin: 1.5rem  ;*/
+      border-radius: 2px;
+    }
+
+    .grid-wrapper {
+      max-width: 75%;
+      margin: 0 auto;
+      background: #1a1a1a;
+      padding: 1.5rem;
+      /*border-radius: 5px;*/
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+		@media (max-width: 800px) {
+			.grid {
+		grid-template-columns: repeat(3, 1fr); /* minimum of 2 columns */
+	  }
+	}
+
+	@media (max-width: 500px) {
+	  .grid {
+		grid-template-columns: 2fr; /* fallback to 1 column on very small screens */
+	  }
+	}	
+	/*
+	@media (min-width: 1000px) {
+	  .grid {
+		grid-template-columns: repeat(3, 1fr);
+	  }
+	}
+	*/
+
+    .game {
+      position: relative;
+      /*border-radius: 16px;*/
+      /*overflow: hidden;*/
+      /*height: 353px;*/
+	  max-width: 100%;
+	  padding-top: 57.3%;
+    }
+
+    .game::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(1px) brightness(0.5);
+	  transform: scale(1);
+      transition: filter 0.4s ease, transform 0.4s ease;
+      z-index: 0;
+    }
+
+    .game:hover::before {
+      filter: blur(0) brightness(1);
+      transform: scale(1.01);
+    }
+
+    .game[style*='background-image']::before {
+      background-image: inherit;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      /*background: rgba(0, 0, 0, 0.5);*/
+      padding: 0.5rem;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .game-title {
+	  text-shadow: 2px 2px 2px rgba(0, 0, 0, 1), -2px -2px 2px rgba(0, 0, 0, 1), 2px -2px 2px rgba(0, 0, 0, 1), -2px 2px 2px rgba(0, 0, 0, 1);
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .buttons a {
+      background: #333;
+      color: #fff;
+      padding: 0.3rem 0.6rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: background 0.3s;
+    }
+
+    .buttons a:hover {
+      background: #555;
+    }
+  </style>
+  <script>
+	function createGameElement(project) {
+	  let game = `
+	  <div class="game" style="background-image: url(${project.image}">
+		<div class="overlay">
+		  <div class="game-title" >${project.title}</div>
+		  <div class="buttons">
+			${project.links.map(link => `<a href="${link.url}" target="_blank">${link.name}</a>`).join('')}
+		  </div>
+		</div>
+		</div>
+	  `;
+
+	  return game;
+	}
+	
+	const projects = [
+    {
+	  title: "Flashing Dark",
+	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2838490/capsule_616x353.jpg?t=1746367778);",
+	  links: [
+		{ name: "Steam", url: "https://store.steampowered.com/app/2838490/Flashing_Dark/" },
+	  ]
+	},
+	{
+	  title: "Utter Takedown",
+	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2338500/capsule_616x353.jpg?t=1746367739)",
+	  links: [
+		{ name: "Steam", url: "https://store.steampowered.com/app/2338500/Utter_Takedown/" },
+	  ]
+	},
+	{
+	  title: "Nevermind This",
+	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2181100/capsule_616x353.jpg?t=1746367686)",
+	  links: [
+		{ name: "Steam", url: "https://store.steampowered.com/app/2181100/Nevermind_This/" },
+	  ]
+	},
+	{
+	  title: "Objective H.A.S.T.E.",
+	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1631170/capsule_616x353.jpg?t=1746367957)",
+	  links: [
+		{ name: "Steam", url: "https://store.steampowered.com/app/1631170/Objective_HASTE__Survival_Horror_Escape/" },
+	  ]
+	}
+	];
+	
+	const projectsUnreleased = [
+	{
+	  title: "Cell Servant",
+	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3686460/123a81c3f212382c99235f05fb83f33fbe8a0d79/capsule_616x353.jpg?t=1746756738",
+	  links: [
+		{ name: "Steam", url: "https://store.steampowered.com/app/3686460/Cell_Servant/?curator_clanid=4777282" },
+	  ]
+	}
+	];
+
+  </script>
+</head>
+<body>
+  <header style="background-color: rgba(0, 0, 0, 0.5); background-size: cover; background-image: url(https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3686460/2f1d8d90c05a6b3c6c277d0e03d529bf04957acf/library_hero_2x.jpg?t=1746756738);">
+    <h1>Fkjaha (Andrii Taras)</h1>
+    <p class="intro" >I'm an indie game developer making PC/Mobile games. Here you can find my published and in-progress projects. Follow me on these platforms or get in touch!</p>
+    <div class="profile-links">
+      <a href="https://store.steampowered.com/curator/43783746">Steam</a>
+      <a href="https://fkjaha.itch.io">itch.io</a>
+      <a href="https://bsky.app/profile/fkjaha.bsky.social">Blue Sky</a>
+      <a href="#">fkjahadev@gmail.com</a>
+    </div>
+  </header>
+
+
+  <div class="section">
+    <h2>Next</h2>
+    <div class="divider"></div>
+	
+    <div class="grid-wrapper">
+      <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+        
+		<script>
+		
+			projectsUnreleased.forEach(project => {
+			  document.write(createGameElement(project));
+			});
+			
+		</script>
+		
+      </div>
+    </div>
+  </div>
+
+
+  <div class="section">
+    <h2>Play Released Games</h2>
+    <div class="divider"></div>
+	
+    <div class="grid-wrapper">
+      <div class="grid">
+        
+		<script>
+		
+			projects.forEach(project => {
+			  document.write(createGameElement(project));
+			});
+			
+		</script>
+		
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>

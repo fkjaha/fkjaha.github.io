@@ -1,307 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fkjaha Dev</title>
-  <link rel="icon" type="image/png" href="https://yt3.googleusercontent.com/ytc/AIdro_mmGv72A8cWtKlKcP1cpqlH56j5a9amsbI1IJMh0xa7Dw=s160-c-k-c0x00ffffff-no-rj">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fkjaha</title>
+  <meta name="description" content="Indie game developer." />
   <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
-      color: #fff;
+    :root{
+      --bg:#000;--fg:#fff;--muted:rgba(255,255,255,.7);--muted2:rgba(255,255,255,.55);
+      --card:rgba(255,255,255,.06);--card-border:rgba(255,255,255,.12);
+      --accent:#fff;--radius:16px;--radius-lg:20px;--shadow:0 10px 30px rgba(0,0,0,.5);
+      --max:1200px
     }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    a{color:inherit;text-decoration:none}
+    img,video{display:block;max-width:100%}
 
-    header {
+    /* Header */
+    header.site-header{position:fixed;inset:0 auto auto 0;height:auto;z-index:50;width:100%;transition:background .25s ease,backdrop-filter .25s ease}
+    header.site-header .wrap{max-width:var(--max);margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between}
+    header.site-header a.brand{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.4px}
+    header.site-header nav{display:none;gap:24px}
+    header.site-header.solid{background:rgba(0,0,0,.8);backdrop-filter:saturate(120%) blur(8px)}
+    @media (min-width: 768px){header.site-header nav{display:flex}}
+    header.site-header nav a{opacity:.9}
+    header.site-header nav a:hover{opacity:1}
 
-      text-align: center;
-      padding: 2rem 1rem;
-      background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
-    }
+    /* Hero */
+    section.hero{position:relative;height:100svh;overflow:hidden}
+    .hero .bg-video{position:absolute;inset:0}
+    .hero .bg-video video{width:100%;height:100%;object-fit:cover}
+    .hero .overlay{position:absolute;inset:0;background:linear-gradient(#00000066,#00000055 30%,#000000cc)}
+    .hero .content{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px}
+    .title{font-size:clamp(32px,6vw,64px);font-weight:900;letter-spacing:.3px;text-shadow:0 6px 24px rgba(0,0,0,.5)}
+    .tagline{margin-top:12px;max-width:720px;color:var(--muted)}
+    .cta-row{margin-top:24px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center}
+    .btn{background:var(--accent);color:#000;padding:12px 18px;border-radius:999px;font-weight:700;box-shadow:var(--shadow);transform:translateY(0);transition:transform .12s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .social-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);padding:10px 12px;border-radius:999px}
+    .social-pill:hover{background:rgba(255,255,255,.2)}
+    .chevron{position:absolute;bottom:24px;opacity:.85}
+    .chevron svg{width:28px;height:28px;animation:float 1.4s infinite}
+    @media (prefers-reduced-motion: reduce){.chevron svg{animation:none}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 
-    h1 {
-		  text-shadow: 
-	  3px 3px 3px rgba(0, 0, 0, 1),
-	  -3px -3px 3px rgba(0, 0, 0, 1),
-	  3px -3px 3px rgba(0, 0, 0, 1),
-	  -3px 3px 3px rgba(0, 0, 0, 1);
-      margin-bottom: 0.5rem;
-      font-size: 2.8rem;
-    }
+    /* Sections */
+    section{position:relative}
+    .section{padding:80px 20px}
+    .container{max-width:var(--max);margin:0 auto}
+    .h2{font-size:clamp(26px,3vw,40px);font-weight:800}
+    .muted{color:var(--muted)}
 
-    .intro {
-		  text-shadow: 
-	  3px 3px 3px rgba(0, 0, 0, 1),
-	  -3px -3px 3px rgba(0, 0, 0, 1),
-	  3px -3px 3px rgba(0, 0, 0, 1),
-	  -3px 3px 3px rgba(0, 0, 0, 1);
-      max-width: 800px;
-      margin: 0 auto 1.5rem;
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
+    /* Games grid */
+    .grid{display:grid;gap:18px}
+    @media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1024px){.grid{grid-template-columns:repeat(3,1fr)}}
 
-    .profile-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
+    .game-card{position:relative;overflow:hidden;border-radius:var(--radius-lg);background:var(--card);border:1px solid var(--card-border);box-shadow:var(--shadow)}
+    .game-media{position:relative;aspect-ratio:16/10}
+    .card-cover,.card-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .35s ease}
+    .card-video{opacity:0}
+    .game-card:hover .card-video{opacity:1}
+    .game-card:hover .card-cover{opacity:0}
+    .media-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,.25) 55%,transparent)}
+    .card-text{position:absolute;left:0;right:0;bottom:0;padding:14px}
+    .game-title{font-weight:700}
+    .game-sub{color:var(--muted);font-size:.95rem}
+    .body{padding:14px}
+    .links{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .chip{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#000;padding:8px 10px;border-radius:999px;font-weight:700;font-size:.85rem}
 
-    .profile-links a {
-      color: #fff;
-      background: #111;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
+    /* About */
+    .about{display:grid;gap:24px;align-items:center}
+    @media(min-width: 900px){.about{grid-template-columns:1.1fr 1fr}}
+    .about img{border-radius:var(--radius-lg);box-shadow:var(--shadow);height:380px;object-fit:cover;width:100%}
 
-    .profile-links a:hover {
-      background: #555;
-    }
-
-    .section {
-      padding: 2rem 1rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-      text-align: left;
-      margin-bottom: 0.5rem;
-      margin-left: 12.5%;
-      /*background: linear-gradient(90deg, #ff8c00, #ffa500);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;*/
-    }
-
-    .divider {
-      margin: 0 auto 1.5rem;
-	  width: 75%;
-      /*width: 100px;*/
-      height: 4px;
-      /*background: linear-gradient(to right, #ff8c00, #ffa500);*/
-	 background: white;
-      /*margin: 1.5rem  ;*/
-      border-radius: 2px;
-    }
-
-    .grid-wrapper {
-      max-width: 75%;
-      margin: 0 auto;
-      background: #1a1a1a;
-      padding: 1.5rem;
-      /*border-radius: 5px;*/
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
-		@media (max-width: 800px) {
-			.grid {
-		grid-template-columns: repeat(3, 1fr); /* minimum of 2 columns */
-	  }
-	}
-
-	@media (max-width: 500px) {
-	  .grid {
-		grid-template-columns: 2fr; /* fallback to 1 column on very small screens */
-	  }
-	}	
-	/*
-	@media (min-width: 1000px) {
-	  .grid {
-		grid-template-columns: repeat(3, 1fr);
-	  }
-	}
-	*/
-
-    .game {
-      position: relative;
-      /*border-radius: 16px;*/
-      /*overflow: hidden;*/
-      /*height: 353px;*/
-	  max-width: 100%;
-	  padding-top: 57.3%;
-    }
-
-    .game::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      filter: blur(1px) brightness(0.5);
-	  transform: scale(1);
-      transition: filter 0.4s ease, transform 0.4s ease;
-      z-index: 0;
-    }
-
-    .game:hover::before {
-      filter: blur(0) brightness(1);
-      transform: scale(1.01);
-    }
-
-    .game[style*='background-image']::before {
-      background-image: inherit;
-    }
-
-    .overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      /*background: rgba(0, 0, 0, 0.5);*/
-      padding: 0.5rem;
-      text-align: center;
-      z-index: 1;
-    }
-
-    .game-title {
-	  text-shadow: 2px 2px 2px rgba(0, 0, 0, 1), -2px -2px 2px rgba(0, 0, 0, 1), 2px -2px 2px rgba(0, 0, 0, 1), -2px 2px 2px rgba(0, 0, 0, 1);
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 0.25rem;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-
-    .buttons a {
-      background: #333;
-      color: #fff;
-      padding: 0.3rem 0.6rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 0.85rem;
-      transition: background 0.3s;
-    }
-
-    .buttons a:hover {
-      background: #555;
-    }
+    /* Footer */
+    footer{border-top:1px solid var(--card-border)}
+    .footer-wrap{display:grid;gap:24px;align-items:center}
+    @media(min-width: 900px){.footer-wrap{grid-template-columns:1fr 1fr}}
+    .right{text-align:left}
+    @media(min-width: 900px){.right{text-align:right}}
+    .note{color:var(--muted2);font-size:.9rem}
   </style>
-  <script>
-	function createGameElement(project) {
-	  let game = `
-	  <div class="game" style="background-image: url(${project.image}">
-		<div class="overlay">
-		  <div class="game-title" >${project.title}</div>
-		  <div class="buttons">
-			${project.links.map(link => `<a href="${link.url}" target="_blank">${link.name}</a>`).join('')}
-		  </div>
-		</div>
-		</div>
-	  `;
-
-	  return game;
-	}
-	
-	const projects = [
-    {
-	  title: "Flashing Dark",
-	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2838490/capsule_616x353.jpg?t=1746367778);",
-	  links: [
-		{ name: "Steam", url: "https://store.steampowered.com/app/2838490/Flashing_Dark/" },
-	  ]
-	},
-	{
-	  title: "Utter Takedown",
-	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2338500/capsule_616x353.jpg?t=1746367739)",
-	  links: [
-		{ name: "Steam", url: "https://store.steampowered.com/app/2338500/Utter_Takedown/" },
-	  ]
-	},
-	{
-	  title: "Nevermind This",
-	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2181100/capsule_616x353.jpg?t=1746367686)",
-	  links: [
-		{ name: "Steam", url: "https://store.steampowered.com/app/2181100/Nevermind_This/" },
-	  ]
-	},
-	{
-	  title: "Objective H.A.S.T.E.",
-	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1631170/capsule_616x353.jpg?t=1746367957)",
-	  links: [
-		{ name: "Steam", url: "https://store.steampowered.com/app/1631170/Objective_HASTE__Survival_Horror_Escape/" },
-	  ]
-	}
-	];
-	
-	const projectsUnreleased = [
-	{
-	  title: "Cell Servant",
-	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3686460/123a81c3f212382c99235f05fb83f33fbe8a0d79/capsule_616x353.jpg?t=1746756738",
-	  links: [
-		{ name: "Steam", url: "https://store.steampowered.com/app/3686460/Cell_Servant/?curator_clanid=4777282" },
-	  ]
-	}
-	];
-
-  </script>
 </head>
 <body>
-  <header style="background-color: rgba(0, 0, 0, 0.5); background-size: cover; background-image: url(https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3686460/2f1d8d90c05a6b3c6c277d0e03d529bf04957acf/library_hero_2x.jpg?t=1746756738);">
-    <h1>Fkjaha (Andrii Taras)</h1>
-    <p class="intro" >I'm an indie game developer making PC/Mobile games. Here you can find my published and in-progress projects. Follow me on these platforms or get in touch!</p>
-    <div class="profile-links">
-      <a href="https://store.steampowered.com/curator/43783746">Steam</a>
-      <a href="https://fkjaha.itch.io">itch.io</a>
-      <a href="https://bsky.app/profile/fkjaha.bsky.social">Blue Sky</a>
-      <a href="#">fkjahadev@gmail.com</a>
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="wrap">
+      <a href="#top" class="brand" aria-label="Studio home">
+        <span aria-hidden="true">🎮</span>
+        <span id="brandName">Your Friend's Studio</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#games">Games</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="bg-video" aria-hidden="true">
+      <video id="heroVideo" autoplay muted playsinline loop poster="https://images.unsplash.com/photo-1520975618314-8fbc362f7c83?q=80&w=2000&auto=format&fit=crop">
+        <!-- Replace with your files in /assets -->
+        <!--<source src="/assets/hero.webm" type="video/webm" />-->
+        <source src="/assets/trailer.webm" type="video/webm" />
+      </video>
+    </div>
+    <div class="overlay" aria-hidden="true"></div>
+    <div class="content">
+      <h1 class="title" id="studioTitle">Your Friend's Studio</h1>
+      <p class="tagline">Stylish indie games with punchy gameplay and bold vibes.</p>
+      <div class="cta-row">
+        <a class="btn" href="#games">See the Games</a>
+        <a class="social-pill" href="https://store.steampowered.com/" target="_blank" rel="noreferrer noopener" aria-label="Steam">
+          <!-- simple icon -->
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 9.95 11.09l-4.81-2.08a3.5 3.5 0 1 0-4.72 4.55l-2.16 3.93A10 10 0 0 1 12 2Zm2.5 10.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg>
+          <span>Steam</span>
+        </a>
+        <a class="social-pill" href="https://youtube.com/" target="_blank" rel="noreferrer noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.4 3.5 12 3.5 12 3.5s-7.4 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c2 .6 9.4.6 9.4.6s7.4 0 9.4-.6a3 3 0 0 0 2.1-2.1c.4-1.9.5-3.8.5-5.8s0-3.9-.5-5.8ZM9.7 15.5V8.5L15.8 12l-6.1 3.5Z"/></svg>
+          <span>YouTube</span>
+        </a>
+        <a class="social-pill" href="https://discord.com/" target="_blank" rel="noreferrer noopener" aria-label="Discord">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M19.5 4a16.8 16.8 0 0 0-4.1-1.3l-.2.4c1.8.5 3.1 1.2 3.1 1.2a10.9 10.9 0 0 0-4-1.2 11.3 11.3 0 0 0-4.2.4c-.1 0-.2 0-.2 0l-.3-.5a16.7 16.7 0 0 0-4.1 1.3C2.2 8.1 1.7 12 .9 15.9A16.6 16.6 0 0 0 6 18.1l.5-.8a10.6 10.6 0 0 1-1.7-.9l.4-.3c3.3 1.5 7.2 1.5 10.5 0l.4.3c-.5.4-1.1.7-1.7.9l.5.8a16.6 16.6 0 0 0 5.1-2.2c.7-3.7.2-7.8-1-12ZM8.7 13.2c-.7 0-1.3-.7-1.3-1.5s.6-1.5 1.3-1.5c.7 0 1.3.7 1.3 1.5s-.6 1.5-1.3 1.5Zm6.6 0c-.7 0-1.3-.7-1.3-1.5s.6-1.5 1.3-1.5 1.3.7 1.3 1.5-.6 1.5-1.3 1.5Z"/></svg>
+          <span>Discord</span>
+        </a>
+      </div>
+      <a class="chevron" href="#games" aria-label="Scroll to games">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 16a1 1 0 0 1-.7-.3l-7-7 1.4-1.4L12 13.6l6.3-6.3 1.4 1.4-7 7a1 1 0 0 1-.7.3Z"/></svg>
+      </a>
+    </div>
+  </section>
 
-  <div class="section">
-    <h2>Next</h2>
-    <div class="divider"></div>
-	
-    <div class="grid-wrapper">
-      <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
-        
-		<script>
-		
-			projectsUnreleased.forEach(project => {
-			  document.write(createGameElement(project));
-			});
-			
-		</script>
-		
+  <!-- Games -->
+  <section id="games" class="section">
+    <div class="container">
+      <h2 class="h2">Games</h2>
+      <p class="muted" style="max-width:720px">A selection of released and upcoming titles. Hover a card to preview.</p>
+
+      <div class="grid" id="gamesGrid">
+        <!-- Game Card 1 -->
+        <article class="game-card" data-game>
+          <div class="game-media">
+            <img class="card-cover" src="https://images.unsplash.com/photo-1618172193763-39f6218a7b25?q=80&w=1600&auto=format&fit=crop" alt="Project Nebula key art">
+            <video class="card-video" muted playsinline loop preload="metadata">
+              <source src="/assets/trailers/nebula.mp4" type="video/mp4">
+            </video>
+            <div class="media-grad" aria-hidden="true"></div>
+            <div class="card-text">
+              <div class="game-title">Project Nebula</div>
+              <div class="game-sub">Arcade roguelite shooter</div>
+            </div>
+          </div>
+          <div class="body">
+            <p class="muted">Dash, blast, and bend the arena with reactive power-ups in a fast, replayable loop.</p>
+            <div class="links">
+              <a class="chip" href="https://store.steampowered.com/" target="_blank" rel="noreferrer noopener">Steam</a>
+              <a class="chip" href="https://example.com" target="_blank" rel="noreferrer noopener">Website</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Game Card 2 -->
+        <article class="game-card" data-game>
+          <div class="game-media">
+            <img class="card-cover" src="https://images.unsplash.com/photo-1520975618314-8fbc362f7c83?q=80&w=1600&auto=format&fit=crop" alt="Echo Runner key art">
+            <video class="card-video" muted playsinline loop preload="metadata">
+              <source src="/assets/trailers/echo.mp4" type="video/mp4">
+            </video>
+            <div class="media-grad" aria-hidden="true"></div>
+            <div class="card-text">
+              <div class="game-title">Echo Runner</div>
+              <div class="game-sub">Speed-platformer</div>
+            </div>
+          </div>
+          <div class="body">
+            <p class="muted">Wall-run, grapple and chain time-splits to outpace your echoes in precision maps.</p>
+            <div class="links">
+              <a class="chip" href="https://store.steampowered.com/" target="_blank" rel="noreferrer noopener">Steam</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Game Card 3 -->
+        <article class="game-card" data-game>
+          <div class="game-media">
+            <img class="card-cover" src="https://images.unsplash.com/photo-1536915949722-c2a9fce74756?q=80&w=1600&auto=format&fit=crop" alt="Chromatic Rift key art">
+            <video class="card-video" muted playsinline loop preload="metadata">
+              <source src="/assets/trailer.mp4" type="video/mp4">
+            </video>
+            <div class="media-grad" aria-hidden="true"></div>
+            <div class="card-text">
+              <div class="game-title">Chromatic Rift</div>
+              <div class="game-sub">Puzzle-action</div>
+            </div>
+          </div>
+          <div class="body">
+            <p class="muted">Slide color planes, rewire enemies and solve bullet-logic in neon arenas.</p>
+            <div class="links">
+              <a class="chip" href="https://example.com" target="_blank" rel="noreferrer noopener">Website</a>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
-  </div>
+  </section>
 
-
-  <div class="section">
-    <h2>Play Released Games</h2>
-    <div class="divider"></div>
-	
-    <div class="grid-wrapper">
-      <div class="grid">
-        
-		<script>
-		
-			projects.forEach(project => {
-			  document.write(createGameElement(project));
-			});
-			
-		</script>
-		
+  <!-- About -->
+  <section id="about" class="section" style="border-top:1px solid var(--card-border)">
+    <div class="container about">
+      <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1800&auto=format&fit=crop" alt="Studio workspace">
+      <div>
+        <h2 class="h2">About the Studio</h2>
+        <p class="muted" style="margin-top:12px">We are a small team crafting gameplay-first experiences. We value tight controls, expressive art, and systems that invite mastery. Our production focuses on thoughtful scope and quality-of-life for players and creators alike.</p>
+        <p class="muted" style="margin-top:12px">Want to collaborate, publish, or cover our games? Get in touch below and we’ll respond shortly.</p>
       </div>
     </div>
-  </div>
+  </section>
 
-  
+  <!-- Contact / Footer -->
+  <footer id="contact" class="section">
+    <div class="container footer-wrap">
+      <div>
+        <h3 class="h2" style="font-size:28px">Contact</h3>
+        <p class="muted" style="margin-top:8px">Business & press inquiries welcome.</p>
+        <div class="links" style="margin-top:12px;flex-wrap:wrap">
+          <a class="chip" href="mailto:hello@yourstudio.dev">hello@yourstudio.dev</a>
+          <a class="chip" href="https://store.steampowered.com/" target="_blank" rel="noreferrer noopener">Steam</a>
+          <a class="chip" href="https://youtube.com/" target="_blank" rel="noreferrer noopener">YouTube</a>
+          <a class="chip" href="https://x.com/" target="_blank" rel="noreferrer noopener">Twitter</a>
+          <a class="chip" href="https://discord.com/" target="_blank" rel="noreferrer noopener">Discord</a>
+          <a class="chip" href="https://example.com" target="_blank" rel="noreferrer noopener">Website</a>
+        </div>
+      </div>
+      <div class="right">
+        <p class="muted">© <span id="year"></span> Your Friend's Studio. All rights reserved.</p>
+        <p class="note" style="margin-top:6px">Built with ♥ for indie devs. Replace all placeholder text and media with your own assets.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky header background
+    const header = document.getElementById('siteHeader');
+    const onScroll = () => {
+      if (window.scrollY > 40) header.classList.add('solid');
+      else header.classList.remove('solid');
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Game card hover play/pause logic
+    const cards = document.querySelectorAll('[data-game]');
+    cards.forEach(card => {
+      const video = card.querySelector('video.card-video');
+      if (!video) return;
+      card.addEventListener('mouseenter', () => { try { video.currentTime = 0; video.play(); } catch(e){} });
+      card.addEventListener('mouseleave', () => { try { video.pause(); video.currentTime = 0; } catch(e){} });
+      // On focus within (keyboard users), play; on blur, pause
+      card.addEventListener('focusin', () => { try { video.currentTime = 0; video.play(); } catch(e){} });
+      card.addEventListener('focusout', () => { try { video.pause(); video.currentTime = 0; } catch(e){} });
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!--
+    🔧 How to use:
+    1) Save this as index.html and place your files under /assets/
+       - /assets/hero.mp4 (or .webm)
+       - /assets/trailers/nebula.mp4, echo.mp4, rift.mp4
+    2) Replace titles, text, links, and images with your own.
+    3) For more games, duplicate a .game-card and update its contents.
+  -->
 </body>
 </html>
