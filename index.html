@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fkjaha</title>
-  <meta name="description" content="Indie game developer." />
+  <title>Fkjaha Games</title>
+  <link rel="icon" type="image/png" href="https://yt3.googleusercontent.com/ytc/AIdro_mmGv72A8cWtKlKcP1cpqlH56j5a9amsbI1IJMh0xa7Dw=s160-c-k-c0x00ffffff-no-rj">
+  <meta name="description" content="Fkjaha - a solo unity c# game developer." />
   <style>
     :root{
       --bg:#000;--fg:#fff;--muted:rgba(255,255,255,.7);--muted2:rgba(255,255,255,.55);
@@ -86,14 +87,89 @@
     @media(min-width: 900px){.right{text-align:right}}
     .note{color:var(--muted2);font-size:.9rem}
   </style>
+  <script>
+	function createGameElement(project) {
+	  let game = `
+	  <article class="game-card" data-game>
+          <div class="game-media">
+            <img class="card-cover" src="https://images.unsplash.com/photo-1618172193763-39f6218a7b25?q=80&w=1600&auto=format&fit=crop" alt="Project Nebula key art">
+            <video class="card-video" muted playsinline loop preload="metadata">
+              <source src=${project.videoPath} type="video/mp4">
+            </video>
+            <div class="media-grad" aria-hidden="true"></div>
+            <div class="card-text">
+              <div class="game-title">${project.title}</div>
+              <div class="game-sub">${project.title}</div>
+            </div>
+          </div>
+          <div class="body">
+            <p class="muted">Dash, blast, and bend the arena with reactive power-ups in a fast, replayable loop.</p>
+            <div class="links">
+
+			${project.links.map(link => `<a class="chip" href=${link.url} target="_blank" rel="noreferrer noopener">${link.name}</a>`).join('')}
+
+            </div>
+          </div>
+        </article>`;
+
+	  return game;
+	}
+  
+  	const projects = [
+    {
+	  title: "Flashing Dark",
+	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2838490/capsule_616x353.jpg?t=1746367778);",
+	  links: [
+		{ name: "Steam", url: "https://store.steampowered.com/app/2838490/Flashing_Dark/" },
+		{ name: "Demo on Itch.io", url: "https://fkjaha.itch.io" },
+	  ],
+	  videoPath: "/assets/trailer.mp4"
+	},
+	{
+	  title: "Utter Takedown",
+	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2338500/capsule_616x353.jpg?t=1746367739)",
+	  links: [
+		{ name: "Steam", url: "https://store.steampowered.com/app/2338500/Utter_Takedown/" },
+	  ],
+	  videoPath: "/assets/trailer.mp4"
+	},
+	{
+	  title: "Nevermind This",
+	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2181100/capsule_616x353.jpg?t=1746367686)",
+	  links: [
+		{ name: "Steam", url: "https://store.steampowered.com/app/2181100/Nevermind_This/" },
+	  ],
+	  videoPath: "/assets/trailer.mp4"
+	},
+	{
+	  title: "Objective H.A.S.T.E.",
+	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1631170/capsule_616x353.jpg?t=1746367957)",
+	  links: [
+		{ name: "Steam", url: "https://store.steampowered.com/app/1631170/Objective_HASTE__Survival_Horror_Escape/" },
+	  ],
+	  videoPath: "/assets/trailer.mp4"
+	}
+	];
+	
+	const projectsUnreleased = [
+	{
+	  title: "Cell Servant",
+	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3686460/123a81c3f212382c99235f05fb83f33fbe8a0d79/capsule_616x353.jpg?t=1746756738",
+	  links: [
+		{ name: "Steam", url: "https://store.steampowered.com/app/3686460/Cell_Servant/?curator_clanid=4777282" },
+	  ],
+	  videoPath: "/assets/trailer.mp4"
+	}
+	];
+  </script>
 </head>
 <body>
   <!-- Header -->
   <header class="site-header" id="siteHeader">
     <div class="wrap">
-      <a href="#top" class="brand" aria-label="Studio home">
+      <a href="#top" class="brand" aria-label="Fkjaha Games">
         <span aria-hidden="true">🎮</span>
-        <span id="brandName">Your Friend's Studio</span>
+        <span id="brandName">Fkjaha Games</span>
       </a>
       <nav aria-label="Primary">
         <a href="#games">Games</a>
@@ -114,20 +190,20 @@
     </div>
     <div class="overlay" aria-hidden="true"></div>
     <div class="content">
-      <h1 class="title" id="studioTitle">Your Friend's Studio</h1>
-      <p class="tagline">Stylish indie games with punchy gameplay and bold vibes.</p>
+      <h1 class="title" id="studioTitle">Fkjaha Games</h1>
+      <p class="tagline">Solo Unity C# Developer making all kinds of games!</p>
       <div class="cta-row">
         <a class="btn" href="#games">See the Games</a>
-        <a class="social-pill" href="https://store.steampowered.com/" target="_blank" rel="noreferrer noopener" aria-label="Steam">
+        <a class="social-pill" href="https://store.steampowered.com/curator/43783746" target="_blank" rel="noreferrer noopener" aria-label="Steam">
           <!-- simple icon -->
           <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 9.95 11.09l-4.81-2.08a3.5 3.5 0 1 0-4.72 4.55l-2.16 3.93A10 10 0 0 1 12 2Zm2.5 10.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg>
           <span>Steam</span>
         </a>
-        <a class="social-pill" href="https://youtube.com/" target="_blank" rel="noreferrer noopener" aria-label="YouTube">
+        <a class="social-pill" href="https://fkjaha.itch.io" target="_blank" rel="noreferrer noopener" aria-label="YouTube">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.4 3.5 12 3.5 12 3.5s-7.4 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c2 .6 9.4.6 9.4.6s7.4 0 9.4-.6a3 3 0 0 0 2.1-2.1c.4-1.9.5-3.8.5-5.8s0-3.9-.5-5.8ZM9.7 15.5V8.5L15.8 12l-6.1 3.5Z"/></svg>
-          <span>YouTube</span>
+          <span>Itch IO</span>
         </a>
-        <a class="social-pill" href="https://discord.com/" target="_blank" rel="noreferrer noopener" aria-label="Discord">
+        <a class="social-pill" href="https://discord.com/invite/wX6b8AcDfS" target="_blank" rel="noreferrer noopener" aria-label="Discord">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M19.5 4a16.8 16.8 0 0 0-4.1-1.3l-.2.4c1.8.5 3.1 1.2 3.1 1.2a10.9 10.9 0 0 0-4-1.2 11.3 11.3 0 0 0-4.2.4c-.1 0-.2 0-.2 0l-.3-.5a16.7 16.7 0 0 0-4.1 1.3C2.2 8.1 1.7 12 .9 15.9A16.6 16.6 0 0 0 6 18.1l.5-.8a10.6 10.6 0 0 1-1.7-.9l.4-.3c3.3 1.5 7.2 1.5 10.5 0l.4.3c-.5.4-1.1.7-1.7.9l.5.8a16.6 16.6 0 0 0 5.1-2.2c.7-3.7.2-7.8-1-12ZM8.7 13.2c-.7 0-1.3-.7-1.3-1.5s.6-1.5 1.3-1.5c.7 0 1.3.7 1.3 1.5s-.6 1.5-1.3 1.5Zm6.6 0c-.7 0-1.3-.7-1.3-1.5s.6-1.5 1.3-1.5 1.3.7 1.3 1.5-.6 1.5-1.3 1.5Z"/></svg>
           <span>Discord</span>
         </a>
@@ -145,69 +221,15 @@
       <p class="muted" style="max-width:720px">A selection of released and upcoming titles. Hover a card to preview.</p>
 
       <div class="grid" id="gamesGrid">
-        <!-- Game Card 1 -->
-        <article class="game-card" data-game>
-          <div class="game-media">
-            <img class="card-cover" src="https://images.unsplash.com/photo-1618172193763-39f6218a7b25?q=80&w=1600&auto=format&fit=crop" alt="Project Nebula key art">
-            <video class="card-video" muted playsinline loop preload="metadata">
-              <source src="/assets/trailers/nebula.mp4" type="video/mp4">
-            </video>
-            <div class="media-grad" aria-hidden="true"></div>
-            <div class="card-text">
-              <div class="game-title">Project Nebula</div>
-              <div class="game-sub">Arcade roguelite shooter</div>
-            </div>
-          </div>
-          <div class="body">
-            <p class="muted">Dash, blast, and bend the arena with reactive power-ups in a fast, replayable loop.</p>
-            <div class="links">
-              <a class="chip" href="https://store.steampowered.com/" target="_blank" rel="noreferrer noopener">Steam</a>
-              <a class="chip" href="https://example.com" target="_blank" rel="noreferrer noopener">Website</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Game Card 2 -->
-        <article class="game-card" data-game>
-          <div class="game-media">
-            <img class="card-cover" src="https://images.unsplash.com/photo-1520975618314-8fbc362f7c83?q=80&w=1600&auto=format&fit=crop" alt="Echo Runner key art">
-            <video class="card-video" muted playsinline loop preload="metadata">
-              <source src="/assets/trailers/echo.mp4" type="video/mp4">
-            </video>
-            <div class="media-grad" aria-hidden="true"></div>
-            <div class="card-text">
-              <div class="game-title">Echo Runner</div>
-              <div class="game-sub">Speed-platformer</div>
-            </div>
-          </div>
-          <div class="body">
-            <p class="muted">Wall-run, grapple and chain time-splits to outpace your echoes in precision maps.</p>
-            <div class="links">
-              <a class="chip" href="https://store.steampowered.com/" target="_blank" rel="noreferrer noopener">Steam</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Game Card 3 -->
-        <article class="game-card" data-game>
-          <div class="game-media">
-            <img class="card-cover" src="https://images.unsplash.com/photo-1536915949722-c2a9fce74756?q=80&w=1600&auto=format&fit=crop" alt="Chromatic Rift key art">
-            <video class="card-video" muted playsinline loop preload="metadata">
-              <source src="/assets/trailer.mp4" type="video/mp4">
-            </video>
-            <div class="media-grad" aria-hidden="true"></div>
-            <div class="card-text">
-              <div class="game-title">Chromatic Rift</div>
-              <div class="game-sub">Puzzle-action</div>
-            </div>
-          </div>
-          <div class="body">
-            <p class="muted">Slide color planes, rewire enemies and solve bullet-logic in neon arenas.</p>
-            <div class="links">
-              <a class="chip" href="https://example.com" target="_blank" rel="noreferrer noopener">Website</a>
-            </div>
-          </div>
-        </article>
+	  
+	    <script>
+		
+			projects.forEach(project => {
+			  document.write(createGameElement(project));
+			});
+			
+		</script>
+        
       </div>
     </div>
   </section>
@@ -218,8 +240,8 @@
       <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1800&auto=format&fit=crop" alt="Studio workspace">
       <div>
         <h2 class="h2">About the Studio</h2>
-        <p class="muted" style="margin-top:12px">We are a small team crafting gameplay-first experiences. We value tight controls, expressive art, and systems that invite mastery. Our production focuses on thoughtful scope and quality-of-life for players and creators alike.</p>
-        <p class="muted" style="margin-top:12px">Want to collaborate, publish, or cover our games? Get in touch below and we’ll respond shortly.</p>
+        <p class="muted" style="margin-top:12px">I am a solo game developer from Europe making games since 2019. I had made dozens of mobile games, a few PC games and I am still moving forward trying to create something awesome :)</p>
+        <p class="muted" style="margin-top:12px">Want to collaborate, publish, or cover my games? Get in touch below and I’ll respond asap.</p>
       </div>
     </div>
   </section>
@@ -231,17 +253,17 @@
         <h3 class="h2" style="font-size:28px">Contact</h3>
         <p class="muted" style="margin-top:8px">Business & press inquiries welcome.</p>
         <div class="links" style="margin-top:12px;flex-wrap:wrap">
-          <a class="chip" href="mailto:hello@yourstudio.dev">hello@yourstudio.dev</a>
-          <a class="chip" href="https://store.steampowered.com/" target="_blank" rel="noreferrer noopener">Steam</a>
-          <a class="chip" href="https://youtube.com/" target="_blank" rel="noreferrer noopener">YouTube</a>
-          <a class="chip" href="https://x.com/" target="_blank" rel="noreferrer noopener">Twitter</a>
-          <a class="chip" href="https://discord.com/" target="_blank" rel="noreferrer noopener">Discord</a>
-          <a class="chip" href="https://example.com" target="_blank" rel="noreferrer noopener">Website</a>
+          <a class="chip" href="mailto:fkjaha@gmail.com">fkjaha@gmail.com</a>
+          <a class="chip" href="https://store.steampowered.com/curator/43783746" target="_blank" rel="noreferrer noopener">Steam</a>
+		  <a class="chip" href="https://fkjaha.itch.io" target="_blank" rel="noreferrer noopener">Itch Io</a>
+          <a class="chip" href="https://www.youtube.com/@fkjahadev" target="_blank" rel="noreferrer noopener">YouTube</a>
+          <a class="chip" href="https://x.com/fkjaha_dev" target="_blank" rel="noreferrer noopener">Twitter</a>
+          <a class="chip" href="https://discord.com/invite/wX6b8AcDfS" target="_blank" rel="noreferrer noopener">Discord</a>
         </div>
       </div>
       <div class="right">
-        <p class="muted">© <span id="year"></span> Your Friend's Studio. All rights reserved.</p>
-        <p class="note" style="margin-top:6px">Built with ♥ for indie devs. Replace all placeholder text and media with your own assets.</p>
+        <p class="muted">© <span id="year"></span> Fkjaha Games. All rights reserved.</p>
+        <p class="note" style="margin-top:6px"> ... </p>
       </div>
     </div>
   </footer>
