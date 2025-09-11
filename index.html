@@ -103,7 +103,7 @@
             </div>
           </div>
           <div class="body">
-            <p class="muted">Dash, blast, and bend the arena with reactive power-ups in a fast, replayable loop.</p>
+            <p class="muted">${project.shortDescription}</p>
             <div class="links">
 
 			${project.links.map(link => `<a class="chip" href=${link.url} target="_blank" rel="noreferrer noopener">${link.name}</a>`).join('')}
@@ -118,6 +118,7 @@
   	const projects = [
     {
 	  title: "Flashing Dark",
+	  shortDescription: "First person horror game about taking care of the Lighthouse.",
 	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2838490/capsule_616x353.jpg?t=1746367778);",
 	  links: [
 		{ name: "Steam", url: "https://store.steampowered.com/app/2838490/Flashing_Dark/" },
@@ -127,14 +128,16 @@
 	},
 	{
 	  title: "Utter Takedown",
+	  shortDescription: "3D Top-down Stealth game. Take down the mafia!",
 	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2338500/capsule_616x353.jpg?t=1746367739)",
 	  links: [
 		{ name: "Steam", url: "https://store.steampowered.com/app/2338500/Utter_Takedown/" },
 	  ],
-	  videoPath: "/assets/ut__trailer_steam.mp4"
+	  videoPath: "/assets/ut_trailer_steam.mp4"
 	},
 	{
 	  title: "Nevermind This",
+	  shortDescription: "First person horror game about a lumberjack living alone in the forest.",
 	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2181100/capsule_616x353.jpg?t=1746367686)",
 	  links: [
 		{ name: "Steam", url: "https://store.steampowered.com/app/2181100/Nevermind_This/" },
@@ -143,6 +146,7 @@
 	},
 	{
 	  title: "Objective H.A.S.T.E.",
+	  shortDescription: "First person horror-survival-escape game about kid trapped in his school.",
 	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1631170/capsule_616x353.jpg?t=1746367957)",
 	  links: [
 		{ name: "Steam", url: "https://store.steampowered.com/app/1631170/Objective_HASTE__Survival_Horror_Escape/" },
@@ -196,7 +200,8 @@
         <a class="btn" href="#games">See the Games</a>
         <a class="social-pill" href="https://store.steampowered.com/curator/43783746" target="_blank" rel="noreferrer noopener" aria-label="Steam">
           <!-- simple icon -->
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 9.95 11.09l-4.81-2.08a3.5 3.5 0 1 0-4.72 4.55l-2.16 3.93A10 10 0 0 1 12 2Zm2.5 10.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg>
+          <img src="/assets/steam.svg" alt="Custom icon" width="18" height="18" aria-hidden="true" />
+
           <span>Steam</span>
         </a>
         <a class="social-pill" href="https://fkjaha.itch.io" target="_blank" rel="noreferrer noopener" aria-label="YouTube">
