@@ -158,12 +158,55 @@
 	const projectsUnreleased = [
 	{
 	  title: "Cell Servant",
+	  shortDescription: "First person horror game about guy working as a cell servant in an unknown prison.",
 	  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3686460/123a81c3f212382c99235f05fb83f33fbe8a0d79/capsule_616x353.jpg?t=1746756738",
 	  links: [
 		{ name: "Steam", url: "https://store.steampowered.com/app/3686460/Cell_Servant/?curator_clanid=4777282" },
 	  ],
 	  videoPath: "/assets/trailer.mp4"
 	}
+	];
+	
+	const projectsMobile = [
+    {
+	  title: "The Rock | Dwayne Johnson",
+	  shortDescription: "100k+ Downloads in 2021",
+	  image: "https://image.winudf.com/v2/image1/Y29tLkZramFoYS5Ta2FsYV9zY3JlZW5fNV8xNjM2NTcxOTI3XzAyNw/screen-5.webp?fakeurl=1&type=.webp",
+	  links: [
+		{ name: "APK Pure", url: "https://apkpure.com/the-rock-dwayne-johnson/com.Fkjaha.Skala" },
+	  ],
+	  videoPath: "/assets/flashing_trailer_steam.mp4"
+	}
+	];
+	
+	const projectsJams = [
+    {
+	  title: "SURVAIMA",
+	  shortDescription: "Wowie Jam 4.0",
+	  image: "https://img.itch.zone/aW1hZ2UvMTY2MzYxMC85NzkxNjA4LnBuZw==/original/WayM%2BX.png",
+	  links: [
+		{ name: "Itch.io", url: "https://fkjaha.itch.io/survaima" },
+	  ],
+	  videoPath: "/assets/flashing_trailer_steam.mp4"
+	},
+	{
+	  title: "Score Calculator Simulator",
+	  shortDescription: "GMTK Game Jam 2023",
+	  image: "https://img.itch.zone/aW1nLzEyNzIxNjY2LnBuZw==/315x250%23c/Vq0kK2.png",
+	  links: [
+		{ name: "Itch.io", url: "https://fkjaha.itch.io/score-calculator" },
+	  ],
+	  videoPath: "/assets/flashing_trailer_steam.mp4"
+	},
+	{
+	  title: "99 Layers of the Looped Dungeon",
+	  shortDescription: "GMTK Game Jam 2025",
+	  image: "https://img.itch.zone/aW1hZ2UvMzc3NzM5MS8yMjUwOTc2Ny5wbmc=/347x500/lNKfKl.png",
+	  links: [
+		{ name: "Itch.io", url: "https://fkjaha.itch.io/99-layers-of-the-looped-dungeon" },
+	  ],
+	  videoPath: "/assets/flashing_trailer_steam.mp4"
+	},
 	];
   </script>
 </head>
@@ -187,8 +230,6 @@
   <section class="hero" id="top">
     <div class="bg-video" aria-hidden="true">
       <video id="heroVideo" autoplay muted playsinline loop poster="https://images.unsplash.com/photo-1520975618314-8fbc362f7c83?q=80&w=2000&auto=format&fit=crop">
-        <!-- Replace with your files in /assets -->
-        <!--<source src="/assets/hero.webm" type="video/webm" />-->
         <source src="/assets/trailer.webm" type="video/webm" />
       </video>
     </div>
@@ -220,15 +261,66 @@
 
   <!-- Games -->
   <section id="games" class="section">
+	<div class="container">
+      <h2 class="h2">Upcoming Games</h2>
+      <p class="muted" style="max-width:720px">Upcoming games from all platforms.</p>
+
+      <div class="grid" id="gamesGrid">
+	  
+	    <script>
+		
+			projectsUnreleased.forEach(project => {
+			  document.write(createGameElement(project));
+			});
+			
+		</script>
+        
+      </div>
+    </div>
+  
     <div class="container">
-      <h2 class="h2">Games</h2>
-      <p class="muted" style="max-width:720px">A selection of released and upcoming titles. Hover a card to preview.</p>
+      <h2 class="h2">PC Games</h2>
+      <p class="muted" style="max-width:720px">PC games I made or have contributed to.</p>
 
       <div class="grid" id="gamesGrid">
 	  
 	    <script>
 		
 			projects.forEach(project => {
+			  document.write(createGameElement(project));
+			});
+			
+		</script>
+        
+      </div>
+    </div>
+	<!-- About 
+	<div class="container">
+      <h2 class="h2">Mobile Games</h2>
+      <p class="muted" style="max-width:720px">Mobile games I made or have contributed to.</p>
+
+      <div class="grid" id="gamesGrid">
+	  
+	    <script>
+		
+			projectsMobile.forEach(project => {
+			  document.write(createGameElement(project));
+			});
+			
+		</script>
+        
+      </div>
+    </div>-->
+	
+	<div class="container">
+      <h2 class="h2">Jam Games</h2>
+      <p class="muted" style="max-width:720px">Games made for game-jams.</p>
+
+      <div class="grid" id="gamesGrid">
+	  
+	    <script>
+		
+			projectsJams.forEach(project => {
 			  document.write(createGameElement(project));
 			});
 			
