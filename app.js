@@ -252,7 +252,7 @@ function renderHero(site) {
   actions.replaceChildren();
 
   const primary = createLink("View Games", "#games", "button is-primary");
-  const steam = createLink("Steam", "https://store.steampowered.com/curator/43783746", "button");
+  const steam = createLink("Steam", "https://store.steampowered.com/curator/45919107", "button");
   const itch = createLink("Itch.io", "https://fkjaha.itch.io", "button");
   actions.append(primary, steam, itch);
 
