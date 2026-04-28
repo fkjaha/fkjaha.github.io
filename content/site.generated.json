@@ -1,0 +1,433 @@
+{
+  "brand": "Fkjaha Games",
+  "eyebrow": "Independent game developer / studio",
+  "lead": "An indie developer creating games for mainly PC but also other platforms.",
+  "stats": [
+    {
+      "label": "Years active",
+      "value": "2019 - now"
+    },
+    {
+      "label": "Location",
+      "value": "Europe"
+    }
+  ],
+  "socials": [
+    {
+      "label": "Steam",
+      "href": "https://store.steampowered.com/curator/45919107"
+    },
+    {
+      "label": "Itch.io",
+      "href": "https://fkjaha.itch.io"
+    },
+    {
+      "label": "Discord",
+      "href": "https://discord.com/invite/ZPGTZc8WTn"
+    },
+    {
+      "label": "YouTube",
+      "href": "https://www.youtube.com/@fkjahadev"
+    },
+    {
+      "label": "X",
+      "href": "https://x.com/fkjaha_dev"
+    }
+  ],
+  "contactEmail": "fkjaha@gmail.com",
+  "sections": [
+    {
+      "id": "upcoming",
+      "title": "Upcoming Games",
+      "description": "New releases and work in progress.",
+      "items": [
+        {
+          "title": "Totally Safe Moon Project",
+          "steamAppId": "4339680",
+          "description": "BREAKING NEWS! A giant asteroid is about to destroy the Earth! The Moon is your last hope. Work together with friends to build a fragile tower from everyday objects.",
+          "genre": "Simulation",
+          "genres": "Simulation",
+          "developers": "Fake Moon",
+          "publishers": "Fake Moon",
+          "releaseDate": "Coming soon",
+          "media": {
+            "header": "content/steam-media/upcoming/4339680-totally-safe-moon-project/header.jpg",
+            "poster": "content/steam-media/upcoming/4339680-totally-safe-moon-project/capsule.jpg",
+            "screenshots": [
+              {
+                "full": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-01.jpg",
+                "thumbnail": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-1-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-02.jpg",
+                "thumbnail": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-2-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-03.jpg",
+                "thumbnail": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-3-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-04.jpg",
+                "thumbnail": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-4-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-05.jpg",
+                "thumbnail": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-5-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-06.jpg",
+                "thumbnail": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-6-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-07.jpg",
+                "thumbnail": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-7-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-08.jpg",
+                "thumbnail": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-8-thumb.jpg"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Reflectory",
+          "steamAppId": "4293890",
+          "description": "An idle incremental game about bouncing balls that lives in the corner of your screen.",
+          "genre": "Casual",
+          "genres": "Casual, Simulation",
+          "developers": "Fkjaha",
+          "publishers": "Fkjaha Games",
+          "releaseDate": "Q3 2026",
+          "media": {
+            "header": "content/steam-media/upcoming/4293890-reflectory/header.jpg",
+            "poster": "content/steam-media/upcoming/4293890-reflectory/capsule.jpg",
+            "screenshots": [
+              {
+                "full": "content/steam-media/upcoming/4293890-reflectory/screenshot-01.jpg",
+                "thumbnail": "content/steam-media/upcoming/4293890-reflectory/screenshot-1-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/upcoming/4293890-reflectory/screenshot-02.jpg",
+                "thumbnail": "content/steam-media/upcoming/4293890-reflectory/screenshot-2-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/upcoming/4293890-reflectory/screenshot-03.jpg",
+                "thumbnail": "content/steam-media/upcoming/4293890-reflectory/screenshot-3-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/upcoming/4293890-reflectory/screenshot-04.jpg",
+                "thumbnail": "content/steam-media/upcoming/4293890-reflectory/screenshot-4-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/upcoming/4293890-reflectory/screenshot-05.jpg",
+                "thumbnail": "content/steam-media/upcoming/4293890-reflectory/screenshot-5-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/upcoming/4293890-reflectory/screenshot-06.jpg",
+                "thumbnail": "content/steam-media/upcoming/4293890-reflectory/screenshot-6-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/upcoming/4293890-reflectory/screenshot-07.jpg",
+                "thumbnail": "content/steam-media/upcoming/4293890-reflectory/screenshot-7-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/upcoming/4293890-reflectory/screenshot-08.jpg",
+                "thumbnail": "content/steam-media/upcoming/4293890-reflectory/screenshot-8-thumb.jpg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "pc",
+      "title": "PC Games",
+      "description": "Released and announced PC projects.",
+      "items": [
+        {
+          "title": "Flashing Dark",
+          "steamAppId": "2838490",
+          "description": "Flashing Dark is a first-person horror game about a lighthouse keeper lately transferred to a new outpost. As he struggles to manage his work, he uncovers a dark and terrifying secret of the island he lives on.",
+          "genre": "Action",
+          "genres": "Action, Adventure, Indie, Simulation",
+          "developers": "Flat Surface Studio, Fkjaha",
+          "publishers": "Flat Surface Studio",
+          "releaseDate": "5 Mar, 2025",
+          "media": {
+            "header": "content/steam-media/pc/2838490-flashing-dark/header.jpg",
+            "poster": "content/steam-media/pc/2838490-flashing-dark/capsule.jpg",
+            "screenshots": [
+              {
+                "full": "content/steam-media/pc/2838490-flashing-dark/screenshot-01.jpg",
+                "thumbnail": "content/steam-media/pc/2838490-flashing-dark/screenshot-1-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2838490-flashing-dark/screenshot-02.jpg",
+                "thumbnail": "content/steam-media/pc/2838490-flashing-dark/screenshot-2-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2838490-flashing-dark/screenshot-03.jpg",
+                "thumbnail": "content/steam-media/pc/2838490-flashing-dark/screenshot-3-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2838490-flashing-dark/screenshot-04.jpg",
+                "thumbnail": "content/steam-media/pc/2838490-flashing-dark/screenshot-4-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2838490-flashing-dark/screenshot-05.jpg",
+                "thumbnail": "content/steam-media/pc/2838490-flashing-dark/screenshot-5-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2838490-flashing-dark/screenshot-06.jpg",
+                "thumbnail": "content/steam-media/pc/2838490-flashing-dark/screenshot-6-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2838490-flashing-dark/screenshot-07.jpg",
+                "thumbnail": "content/steam-media/pc/2838490-flashing-dark/screenshot-7-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2838490-flashing-dark/screenshot-08.jpg",
+                "thumbnail": "content/steam-media/pc/2838490-flashing-dark/screenshot-8-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2838490-flashing-dark/screenshot-09.jpg",
+                "thumbnail": "content/steam-media/pc/2838490-flashing-dark/screenshot-9-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2838490-flashing-dark/screenshot-10.jpg",
+                "thumbnail": "content/steam-media/pc/2838490-flashing-dark/screenshot-10-thumb.jpg"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Utter Takedown",
+          "steamAppId": "2338500",
+          "description": "Utter Takedown is a hard-core top-down tactical stealth game set in the 2000s. You have been a hitman for a long time. But after you stopped working with the local mafia, it decided to threaten your family and get rid of you. Now, your goal is to make utter mafia takedown.",
+          "genre": "Action",
+          "genres": "Action, Indie, Strategy",
+          "developers": "Fkjaha",
+          "publishers": "Flat Surface Studio",
+          "releaseDate": "1 Mar, 2024",
+          "media": {
+            "header": "content/steam-media/pc/2338500-utter-takedown/header.jpg",
+            "poster": "content/steam-media/pc/2338500-utter-takedown/capsule.jpg",
+            "screenshots": [
+              {
+                "full": "content/steam-media/pc/2338500-utter-takedown/screenshot-01.jpg",
+                "thumbnail": "content/steam-media/pc/2338500-utter-takedown/screenshot-1-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2338500-utter-takedown/screenshot-02.jpg",
+                "thumbnail": "content/steam-media/pc/2338500-utter-takedown/screenshot-2-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2338500-utter-takedown/screenshot-03.jpg",
+                "thumbnail": "content/steam-media/pc/2338500-utter-takedown/screenshot-3-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2338500-utter-takedown/screenshot-04.jpg",
+                "thumbnail": "content/steam-media/pc/2338500-utter-takedown/screenshot-4-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2338500-utter-takedown/screenshot-05.jpg",
+                "thumbnail": "content/steam-media/pc/2338500-utter-takedown/screenshot-5-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2338500-utter-takedown/screenshot-06.jpg",
+                "thumbnail": "content/steam-media/pc/2338500-utter-takedown/screenshot-6-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2338500-utter-takedown/screenshot-07.jpg",
+                "thumbnail": "content/steam-media/pc/2338500-utter-takedown/screenshot-7-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2338500-utter-takedown/screenshot-08.jpg",
+                "thumbnail": "content/steam-media/pc/2338500-utter-takedown/screenshot-8-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2338500-utter-takedown/screenshot-09.jpg",
+                "thumbnail": "content/steam-media/pc/2338500-utter-takedown/screenshot-9-thumb.jpg"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Nevermind This",
+          "steamAppId": "2181100",
+          "description": "Step into the world of &quot;Nevermind this&quot;, a heart-pumping horror where confusion, chaos, fear, distraction and even fun come together for an unique game experience, in a cursed hut from old Lumberjack. Don't let them mess with your mind.",
+          "genre": "Action",
+          "genres": "Action, Adventure, Indie, Simulation",
+          "developers": "Flat Surface Studio, Fkjaha",
+          "publishers": "Flat Surface Studio",
+          "releaseDate": "8 Dec, 2023",
+          "media": {
+            "header": "content/steam-media/pc/2181100-nevermind-this/header.jpg",
+            "poster": "content/steam-media/pc/2181100-nevermind-this/capsule.jpg",
+            "screenshots": [
+              {
+                "full": "content/steam-media/pc/2181100-nevermind-this/screenshot-01.jpg",
+                "thumbnail": "content/steam-media/pc/2181100-nevermind-this/screenshot-1-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2181100-nevermind-this/screenshot-02.jpg",
+                "thumbnail": "content/steam-media/pc/2181100-nevermind-this/screenshot-2-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2181100-nevermind-this/screenshot-03.jpg",
+                "thumbnail": "content/steam-media/pc/2181100-nevermind-this/screenshot-3-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2181100-nevermind-this/screenshot-04.jpg",
+                "thumbnail": "content/steam-media/pc/2181100-nevermind-this/screenshot-4-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2181100-nevermind-this/screenshot-05.jpg",
+                "thumbnail": "content/steam-media/pc/2181100-nevermind-this/screenshot-5-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2181100-nevermind-this/screenshot-06.jpg",
+                "thumbnail": "content/steam-media/pc/2181100-nevermind-this/screenshot-6-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2181100-nevermind-this/screenshot-07.jpg",
+                "thumbnail": "content/steam-media/pc/2181100-nevermind-this/screenshot-7-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2181100-nevermind-this/screenshot-08.jpg",
+                "thumbnail": "content/steam-media/pc/2181100-nevermind-this/screenshot-8-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2181100-nevermind-this/screenshot-09.jpg",
+                "thumbnail": "content/steam-media/pc/2181100-nevermind-this/screenshot-9-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2181100-nevermind-this/screenshot-10.jpg",
+                "thumbnail": "content/steam-media/pc/2181100-nevermind-this/screenshot-10-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/2181100-nevermind-this/screenshot-11.jpg",
+                "thumbnail": "content/steam-media/pc/2181100-nevermind-this/screenshot-11-thumb.jpg"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Objective H.A.S.T.E. - Survival Horror Escape",
+          "steamAppId": "1631170",
+          "description": "Objective H.A.S.T.E. - is a first-person 3D survival game in the horror genre. Have you ever imagined that your school could be under attack by terrorists, so the only good thing would be that the lessons would be canceled? I bet you did. This game can allow you to visit such a situation.",
+          "genre": "Indie",
+          "genres": "Indie",
+          "developers": "Sparking Games, Fkjaha",
+          "publishers": "Sparking Games",
+          "releaseDate": "3 Mar, 2022",
+          "media": {
+            "header": "content/steam-media/pc/1631170-objective-h-a-s-t-e/header.jpg",
+            "poster": "content/steam-media/pc/1631170-objective-h-a-s-t-e/capsule.jpg",
+            "screenshots": [
+              {
+                "full": "content/steam-media/pc/1631170-objective-h-a-s-t-e/screenshot-01.jpg",
+                "thumbnail": "content/steam-media/pc/1631170-objective-h-a-s-t-e/screenshot-1-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/1631170-objective-h-a-s-t-e/screenshot-02.jpg",
+                "thumbnail": "content/steam-media/pc/1631170-objective-h-a-s-t-e/screenshot-2-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/1631170-objective-h-a-s-t-e/screenshot-03.jpg",
+                "thumbnail": "content/steam-media/pc/1631170-objective-h-a-s-t-e/screenshot-3-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/1631170-objective-h-a-s-t-e/screenshot-04.jpg",
+                "thumbnail": "content/steam-media/pc/1631170-objective-h-a-s-t-e/screenshot-4-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/1631170-objective-h-a-s-t-e/screenshot-05.jpg",
+                "thumbnail": "content/steam-media/pc/1631170-objective-h-a-s-t-e/screenshot-5-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/1631170-objective-h-a-s-t-e/screenshot-06.jpg",
+                "thumbnail": "content/steam-media/pc/1631170-objective-h-a-s-t-e/screenshot-6-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/1631170-objective-h-a-s-t-e/screenshot-07.jpg",
+                "thumbnail": "content/steam-media/pc/1631170-objective-h-a-s-t-e/screenshot-7-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/1631170-objective-h-a-s-t-e/screenshot-08.jpg",
+                "thumbnail": "content/steam-media/pc/1631170-objective-h-a-s-t-e/screenshot-8-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/1631170-objective-h-a-s-t-e/screenshot-09.jpg",
+                "thumbnail": "content/steam-media/pc/1631170-objective-h-a-s-t-e/screenshot-9-thumb.jpg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "jams",
+      "title": "Jam Games",
+      "description": "Small experiments made for game jams.",
+      "items": [
+        {
+          "title": "SIGNUM",
+          "type": "Ludum Dare 59",
+          "description": "",
+          "media": {
+            "poster": "https://img.itch.zone/aW1nLzI2ODEwODUxLnBuZw==/315x250%23c/ZNrKVU.png"
+          },
+          "links": [
+            {
+              "label": "Itch.io",
+              "href": "https://fkjaha.itch.io/signum"
+            }
+          ]
+        },
+        {
+          "title": "99 Layers of the Looped Dungeon",
+          "type": "GMTK Game Jam 2025",
+          "description": "A fast jam project for GMTK Game Jam 2025.",
+          "media": {
+            "poster": "https://img.itch.zone/aW1hZ2UvMzc3NzM5MS8yMjUwOTc2Ny5wbmc=/347x500/lNKfKl.png"
+          },
+          "links": [
+            {
+              "label": "Itch.io",
+              "href": "https://fkjaha.itch.io/99-layers-of-the-looped-dungeon"
+            }
+          ]
+        },
+        {
+          "title": "Score Calculator Simulator",
+          "type": "GMTK Game Jam 2023",
+          "description": "A jam game built for GMTK Game Jam 2023.",
+          "media": {
+            "poster": "https://img.itch.zone/aW1nLzEyNzIxNjY2LnBuZw==/315x250%23c/Vq0kK2.png"
+          },
+          "links": [
+            {
+              "label": "Itch.io",
+              "href": "https://fkjaha.itch.io/score-calculator"
+            }
+          ]
+        },
+        {
+          "title": "SURVAIMA",
+          "type": "Wowie Jam 4.0",
+          "description": "A compact jam entry created for Wowie Jam 4.0.",
+          "media": {
+            "poster": "https://img.itch.zone/aW1hZ2UvMTY2MzYxMC85NzkxNjA4LnBuZw==/original/WayM%2BX.png"
+          },
+          "links": [
+            {
+              "label": "Itch.io",
+              "href": "https://fkjaha.itch.io/survaima"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

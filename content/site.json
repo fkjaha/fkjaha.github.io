@@ -1,0 +1,141 @@
+{
+  "brand": "Fkjaha Games",
+  "eyebrow": "Independent game developer / studio",
+  "lead": "An indie developer creating games for mainly PC but also other platforms.",
+  "stats": [
+    {
+      "label": "Years active",
+      "value": "2019 - now"
+    },
+    {
+      "label": "Location",
+      "value": "Europe"
+    }
+  ],
+  "socials": [
+    {
+      "label": "Steam",
+      "href": "https://store.steampowered.com/curator/45919107"
+    },
+    {
+      "label": "Itch.io",
+      "href": "https://fkjaha.itch.io"
+    },
+    {
+      "label": "Discord",
+      "href": "https://discord.com/invite/ZPGTZc8WTn"
+    },
+    {
+      "label": "YouTube",
+      "href": "https://www.youtube.com/@fkjahadev"
+    },
+    {
+      "label": "X",
+      "href": "https://x.com/fkjaha_dev"
+    }
+  ],
+  "contactEmail": "fkjaha@gmail.com",
+  "sections": [
+    {
+      "id": "upcoming",
+      "title": "Upcoming Games",
+      "description": "New releases and work in progress.",
+      "items": [
+        {
+          "title": "Totally Safe Moon Project",
+          "steamAppId": "4339680"
+        },
+        {
+          "title": "Reflectory",
+          "steamAppId": "4293890"
+        }
+      ]
+    },
+    {
+      "id": "pc",
+      "title": "PC Games",
+      "description": "Released and announced PC projects.",
+      "items": [
+        {
+          "title": "Flashing Dark",
+          "steamAppId": "2838490"
+        },
+        {
+          "title": "Utter Takedown",
+          "steamAppId": "2338500"
+        },
+        {
+          "title": "Nevermind This",
+          "steamAppId": "2181100"
+        },
+        {
+          "title": "Objective H.A.S.T.E.",
+          "steamAppId": "1631170"
+        }
+      ]
+    },
+    {
+      "id": "jams",
+      "title": "Jam Games",
+      "description": "Small experiments made for game jams.",
+      "items": [
+        {
+          "title": "SIGNUM",
+          "type": "Ludum Dare 59",
+          "description": "",
+          "media": {
+            "poster": "https://img.itch.zone/aW1nLzI2ODEwODUxLnBuZw==/315x250%23c/ZNrKVU.png"
+          },
+          "links": [
+            {
+              "label": "Itch.io",
+              "href": "https://fkjaha.itch.io/signum"
+            }
+          ]
+        },
+        {
+          "title": "99 Layers of the Looped Dungeon",
+          "type": "GMTK Game Jam 2025",
+          "description": "A fast jam project for GMTK Game Jam 2025.",
+          "media": {
+            "poster": "https://img.itch.zone/aW1hZ2UvMzc3NzM5MS8yMjUwOTc2Ny5wbmc=/347x500/lNKfKl.png"
+          },
+          "links": [
+            {
+              "label": "Itch.io",
+              "href": "https://fkjaha.itch.io/99-layers-of-the-looped-dungeon"
+            }
+          ]
+        },
+        {
+          "title": "Score Calculator Simulator",
+          "type": "GMTK Game Jam 2023",
+          "description": "A jam game built for GMTK Game Jam 2023.",
+          "media": {
+            "poster": "https://img.itch.zone/aW1nLzEyNzIxNjY2LnBuZw==/315x250%23c/Vq0kK2.png"
+          },
+          "links": [
+            {
+              "label": "Itch.io",
+              "href": "https://fkjaha.itch.io/score-calculator"
+            }
+          ]
+        },
+        {
+          "title": "SURVAIMA",
+          "type": "Wowie Jam 4.0",
+          "description": "A compact jam entry created for Wowie Jam 4.0.",
+          "media": {
+            "poster": "https://img.itch.zone/aW1hZ2UvMTY2MzYxMC85NzkxNjA4LnBuZw==/original/WayM%2BX.png"
+          },
+          "links": [
+            {
+              "label": "Itch.io",
+              "href": "https://fkjaha.itch.io/survaima"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
