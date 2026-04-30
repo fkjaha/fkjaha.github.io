@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark" />
+  <title>Played Games - Fkjaha Games</title>
+  <link rel="icon" type="image/png"
+    href="https://yt3.googleusercontent.com/ytc/AIdro_mmGv72A8cWtKlKcP1cpqlH56j5a9amsbI1IJMh0xa7Dw=s160-c-k-c0x00ffffff-no-rj">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="shell header-shell">
+      <a href="index.html" class="brand">
+        <div class="brand-text">
+          <strong>Fkjaha Games</strong>
+        </div>
+      </a>
+      <nav class="primary-nav">
+        <a href="index.html#games">Games</a>
+        <a href="played-games.html">Top 50 Games</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="game-detail-hero" style="margin-bottom: 60px;">
+      <div class="shell">
+        <h1>Top 50 Games I've Played</h1>
+      </div>
+    </section>
+
+    <div class="lightning-divider"></div>
+
+    <section class="section">
+      <div class="shell">
+        <div id="playedGamesState" style="text-align: center; padding: 40px; color: rgba(255,255,255,0.6);">Loading
+          games...</div>
+        <div class="played-list" id="playedGamesList" style="max-width: 800px; margin: 0 auto;"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-shell">
+      <p>&copy; <span id="year">2026</span> Fkjaha Games.</p>
+    </div>
+  </footer>
+
+  <script src="played-games.js"></script>
+</body>
+
+</html>

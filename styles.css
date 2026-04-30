@@ -499,7 +499,7 @@ button, input, textarea, select { font: inherit; }
   height: 80px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 80' preserveAspectRatio='none'%3E%3Cpath d='M0,40 L150,60 L300,20 L450,70 L600,10 L750,65 L900,15 L1050,75 L1200,30 L1200,80 L0,80 Z' fill='%231a0b38'/%3E%3C/svg%3E");
   background-size: 100% 100%;
-  margin: -40px 0;
+  margin: 0;
   position: relative;
   z-index: 2;
   pointer-events: none;
@@ -655,4 +655,41 @@ button, input, textarea, select { font: inherit; }
 }
 .screenshot-item:hover {
   transform: scale(1.02);
+}
+
+/* ==========================================================================
+   Played Games specific styles
+   ========================================================================== */
+
+.played-list-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.played-list-rank {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent);
+  opacity: 0.8;
+  margin-right: 20px;
+  min-width: 40px;
+  text-align: right;
+}
+
+.played-list-item:hover .card-title {
+  background: var(--accent);
+  color: var(--bg);
+  transform: translateX(14px);
+}
+
+@media (max-width: 600px) {
+  .played-list-item {
+    padding: 12px 10px;
+  }
 }
