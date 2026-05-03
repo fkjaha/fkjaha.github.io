@@ -13,6 +13,7 @@ Animal Well
 Grounded
 Sanabi
 HITMAN I
+A short hike
 Hail to the Rainbow
 Firewatch
 Wildfrost
@@ -46,5 +47,5 @@ Cuphead
 Twelve Minutes
 The Escapists
 GTA 5
-Kill it with fire
 Metro Series
+Kill it with fire
