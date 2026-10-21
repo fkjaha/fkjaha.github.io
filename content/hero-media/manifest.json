@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "width": 320,
+  "height": 180,
+  "games": [
+    {
+      "steamAppId": "4339680",
+      "title": "Totally Safe Moon Project",
+      "images": [
+        "content/hero-media/hero-1cf421173072b1c7.webp",
+        "content/hero-media/hero-b9c40f4afe72bad4.webp",
+        "content/hero-media/hero-761e4c64db9ff3e2.webp",
+        "content/hero-media/hero-022783a84fc4be58.webp",
+        "content/hero-media/hero-bc43f6ec05c2d0b0.webp",
+        "content/hero-media/hero-88feab02a217d1bc.webp"
+      ]
+    },
+    {
+      "steamAppId": "2838490",
+      "title": "Flashing Dark",
+      "images": [
+        "content/hero-media/hero-4d8b015a62716286.webp",
+        "content/hero-media/hero-1f691ef6ab9f9f73.webp",
+        "content/hero-media/hero-f56f40393a00e548.webp",
+        "content/hero-media/hero-b22de5bd13ae487b.webp",
+        "content/hero-media/hero-74cf2bae5f554804.webp"
+      ]
+    },
+    {
+      "steamAppId": "4321830",
+      "title": "Reflectory Demo",
+      "images": [
+        "content/hero-media/hero-62a37b35d9754289.webp",
+        "content/hero-media/hero-4cb15a921fa9d231.webp",
+        "content/hero-media/hero-961a2c9bfc629195.webp",
+        "content/hero-media/hero-71dc13824f38af10.webp"
+      ]
+    },
+    {
+      "steamAppId": "2338500",
+      "title": "Utter Takedown",
+      "images": [
+        "content/hero-media/hero-23ed9bdf9e2e1cc0.webp",
+        "content/hero-media/hero-02b3e9b6c848d7ec.webp",
+        "content/hero-media/hero-7aed0f5d9d726461.webp",
+        "content/hero-media/hero-713d62758b5d2139.webp",
+        "content/hero-media/hero-55c591f0786be667.webp"
+      ]
+    },
+    {
+      "steamAppId": "2181100",
+      "title": "Nevermind This",
+      "images": [
+        "content/hero-media/hero-89037f05f5085d33.webp",
+        "content/hero-media/hero-1a231636282cbf85.webp",
+        "content/hero-media/hero-a37daacee78418d2.webp",
+        "content/hero-media/hero-b83ca6f1bc2fe74b.webp",
+        "content/hero-media/hero-2e3bcd1140ffa839.webp",
+        "content/hero-media/hero-68db2914b164dd45.webp"
+      ]
+    },
+    {
+      "steamAppId": "1631170",
+      "title": "Objective H.A.S.T.E. - Survival Horror Escape",
+      "images": [
+        "content/hero-media/hero-5accdbdba1b5aa21.webp",
+        "content/hero-media/hero-c9cbad2583b5af0c.webp",
+        "content/hero-media/hero-a8b4622e8aa5a5c8.webp",
+        "content/hero-media/hero-c8b1d20304895409.webp",
+        "content/hero-media/hero-b807f58410d6bf97.webp"
+      ]
+    }
+  ]
+}

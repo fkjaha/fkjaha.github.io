@@ -243,7 +243,7 @@ function wireVideo(card) {
   card.addEventListener("focusout", pause);
 }
 
-function renderHeroBackground(site) {
+async function renderHeroBackground(site) {
   const hero = $("#top");
   const background = $("#heroBackground");
   if (!hero || !background) return;
@@ -257,59 +257,75 @@ function renderHeroBackground(site) {
     return shuffled;
   };
 
-  const games = shuffle(site.sections.flatMap(section => section.items || []))
-    .map(game => shuffle((game.media?.screenshots || [])
-      .map(shot => shot.thumbnail || shot.full).filter(Boolean)))
-    .filter(shots => shots.length);
+  // The hero only loads generated miniatures, never the full screenshot gallery.
+  let manifest;
+  try {
+    manifest = await loadJSON("content/hero-media/manifest.json");
+  } catch {
+    // The rest of the homepage still works before the local asset build is run.
+    return;
+  }
+  const activeIds = new Set(site.sections.flatMap(section => section.items || [])
+    .filter(game => game.steamAppId).map(game => String(game.steamAppId)));
+  const games = shuffle(manifest.games || [])
+    .filter(game => activeIds.has(String(game.steamAppId)))
+    .map(game => shuffle((game.images || []).filter(src => typeof src === "string")))
+    .filter(images => images.length);
   if (!games.length) return;
 
-  // Pick across games before taking more shots from the same game. Thumbnails
-  // keep this decorative layer light; repeated tiles share cached image files.
-  const screenshots = [];
-  const seen = new Set();
-  const maxShots = Math.max(...games.map(shots => shots.length));
-  for (let index = 0; index < maxShots && screenshots.length < 24; index++) {
-    for (const shots of games) {
-      const src = shots[index];
-      if (src && !seen.has(src) && screenshots.length < 24) {
-        screenshots.push(src);
-        seen.add(src);
+  const compact = window.matchMedia("(max-width: 600px)");
+  function buildMosaic() {
+    const limit = compact.matches ? 8 : 12;
+    const screenshots = [];
+    const seen = new Set();
+    const maxShots = Math.max(...games.map(shots => shots.length));
+    // Preserve variety across games, with a small pool shared by every row.
+    for (let index = 0; index < maxShots && screenshots.length < limit; index++) {
+      for (const shots of games) {
+        const src = shots[index];
+        if (src && !seen.has(src) && screenshots.length < limit) {
+          screenshots.push(src);
+          seen.add(src);
+        }
       }
     }
-  }
-  const pool = shuffle(screenshots);
-  const mosaic = document.createElement("div");
-  mosaic.className = "hero-mosaic";
-
-  for (let rowIndex = 0; rowIndex < 4; rowIndex++) {
-    const row = document.createElement("div");
-    row.className = "hero-mosaic-row";
-    row.style.setProperty("--drift-duration", `${130 + rowIndex * 17}s`);
-    row.style.setProperty("--drift-delay", `${-rowIndex * 29 - 18}s`);
-    const track = document.createElement("div");
-    track.className = "hero-mosaic-track";
-    const group = document.createElement("div");
-    group.className = "hero-mosaic-group";
-    for (let column = 0; column < 6; column++) {
-      const img = document.createElement("img");
-      img.src = pool[(rowIndex * 6 + column) % pool.length];
-      img.alt = "";
-      img.width = 320;
-      img.height = 180;
-      img.decoding = "async";
-      img.fetchPriority = "low";
-      img.draggable = false;
-      group.appendChild(img);
+    const pool = shuffle(screenshots);
+    const mosaic = document.createElement("div");
+    mosaic.className = "hero-mosaic";
+    const rowCount = compact.matches ? 3 : 4;
+    const columnCount = compact.matches ? 4 : 5;
+    for (let rowIndex = 0; rowIndex < rowCount; rowIndex++) {
+      const row = document.createElement("div");
+      row.className = "hero-mosaic-row";
+      row.style.setProperty("--drift-duration", `${130 + rowIndex * 17}s`);
+      row.style.setProperty("--drift-delay", `${-rowIndex * 29 - 18}s`);
+      const track = document.createElement("div");
+      track.className = "hero-mosaic-track";
+      const group = document.createElement("div");
+      group.className = "hero-mosaic-group";
+      for (let column = 0; column < columnCount; column++) {
+        const img = document.createElement("img");
+        img.src = pool[(rowIndex * columnCount + column) % pool.length];
+        img.alt = "";
+        img.width = manifest.width;
+        img.height = manifest.height;
+        img.decoding = "async";
+        img.fetchPriority = "low";
+        img.draggable = false;
+        group.appendChild(img);
+      }
+      // Equal halves include their trailing gap, so the loop has no jump.
+      track.append(group, group.cloneNode(true));
+      row.appendChild(track);
+      mosaic.appendChild(row);
     }
-    // Equal halves include their trailing gap, so the loop has no jump.
-    track.append(group, group.cloneNode(true));
-    row.appendChild(track);
-    mosaic.appendChild(row);
+    mosaic.querySelectorAll("img").forEach(img => {
+      img.addEventListener("error", () => { img.style.visibility = "hidden"; }, { once: true });
+    });
+    background.replaceChildren(mosaic);
   }
-  mosaic.querySelectorAll("img").forEach(img => {
-    img.addEventListener("error", () => { img.style.visibility = "hidden"; }, { once: true });
-  });
-  background.replaceChildren(mosaic);
+  buildMosaic();
+  compact.addEventListener("change", buildMosaic);
   hero.classList.add("has-mosaic");
 
   const toggle = $("#heroMotionToggle");
@@ -456,7 +472,7 @@ async function main() {
   const site = normalizeSiteData(await loadSiteData());
 
   renderHero(site);
-  renderHeroBackground(site);
+  void renderHeroBackground(site).catch(console.warn);
   renderSections(site);
   renderContact(site);
 
