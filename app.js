@@ -243,6 +243,93 @@ function wireVideo(card) {
   card.addEventListener("focusout", pause);
 }
 
+function renderHeroBackground(site) {
+  const hero = $("#top");
+  const background = $("#heroBackground");
+  if (!hero || !background) return;
+
+  const shuffle = (items) => {
+    const shuffled = [...items];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
+  const games = shuffle(site.sections.flatMap(section => section.items || []))
+    .map(game => shuffle((game.media?.screenshots || [])
+      .map(shot => shot.thumbnail || shot.full).filter(Boolean)))
+    .filter(shots => shots.length);
+  if (!games.length) return;
+
+  // Pick across games before taking more shots from the same game. Thumbnails
+  // keep this decorative layer light; repeated tiles share cached image files.
+  const screenshots = [];
+  const seen = new Set();
+  const maxShots = Math.max(...games.map(shots => shots.length));
+  for (let index = 0; index < maxShots && screenshots.length < 24; index++) {
+    for (const shots of games) {
+      const src = shots[index];
+      if (src && !seen.has(src) && screenshots.length < 24) {
+        screenshots.push(src);
+        seen.add(src);
+      }
+    }
+  }
+  const pool = shuffle(screenshots);
+  const mosaic = document.createElement("div");
+  mosaic.className = "hero-mosaic";
+
+  for (let rowIndex = 0; rowIndex < 4; rowIndex++) {
+    const row = document.createElement("div");
+    row.className = "hero-mosaic-row";
+    row.style.setProperty("--drift-duration", `${130 + rowIndex * 17}s`);
+    row.style.setProperty("--drift-delay", `${-rowIndex * 29 - 18}s`);
+    const track = document.createElement("div");
+    track.className = "hero-mosaic-track";
+    const group = document.createElement("div");
+    group.className = "hero-mosaic-group";
+    for (let column = 0; column < 6; column++) {
+      const img = document.createElement("img");
+      img.src = pool[(rowIndex * 6 + column) % pool.length];
+      img.alt = "";
+      img.width = 320;
+      img.height = 180;
+      img.decoding = "async";
+      img.fetchPriority = "low";
+      img.draggable = false;
+      group.appendChild(img);
+    }
+    // Equal halves include their trailing gap, so the loop has no jump.
+    track.append(group, group.cloneNode(true));
+    row.appendChild(track);
+    mosaic.appendChild(row);
+  }
+  mosaic.querySelectorAll("img").forEach(img => {
+    img.addEventListener("error", () => { img.style.visibility = "hidden"; }, { once: true });
+  });
+  background.replaceChildren(mosaic);
+  hero.classList.add("has-mosaic");
+
+  const toggle = $("#heroMotionToggle");
+  toggle.hidden = false;
+  toggle.addEventListener("click", () => {
+    const paused = hero.classList.toggle("is-motion-paused");
+    toggle.setAttribute("aria-pressed", String(paused));
+    $("#heroMotionLabel").textContent = paused ? "Resume background" : "Pause background";
+  });
+
+  let inView = false;
+  const updateMotion = () => hero.classList.toggle("is-motion-active", inView && !document.hidden);
+  const observer = new IntersectionObserver(([entry]) => {
+    inView = entry.isIntersecting;
+    updateMotion();
+  });
+  observer.observe(hero);
+  document.addEventListener("visibilitychange", updateMotion);
+}
+
 function renderHero(site) {
   $("#heroEyebrow").textContent = site.eyebrow || "Independent game studio";
   $("#studioTitle").textContent = site.brand || "Fkjaha Games";
@@ -369,6 +456,7 @@ async function main() {
   const site = normalizeSiteData(await loadSiteData());
 
   renderHero(site);
+  renderHeroBackground(site);
   renderSections(site);
   renderContact(site);
 

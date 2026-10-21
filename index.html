@@ -14,7 +14,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=hero-mosaic-1" />
 </head>
 
 <body>
@@ -38,6 +38,7 @@
 
   <main id="content">
     <section class="hero" id="top">
+      <div class="hero-background" id="heroBackground" aria-hidden="true"></div>
       <div class="shell hero-shell">
         <div class="hero-copy">
           <p class="eyebrow" id="heroEyebrow">Independent game developer studio</p>
@@ -53,6 +54,10 @@
 
 
       </div>
+      <button class="hero-motion-toggle" id="heroMotionToggle" type="button" aria-pressed="false" hidden>
+        <span class="hero-motion-icon" aria-hidden="true"></span>
+        <span id="heroMotionLabel">Pause background</span>
+      </button>
     </section>
 
     <div class="lightning-divider"></div>
@@ -87,7 +92,7 @@
     </div>
   </footer>
 
-  <script type="module" src="app.js"></script>
+  <script type="module" src="app.js?v=hero-mosaic-1"></script>
 </body>
 
 </html>
