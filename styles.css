@@ -651,14 +651,48 @@ button, input, textarea, select { font: inherit; }
   transform: scale(1) translateY(0);
 }
 
-.lightning-divider {
+.wave-divider {
   height: 80px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 80' preserveAspectRatio='none'%3E%3Cpath d='M0,40 L150,60 L300,20 L450,70 L600,10 L750,65 L900,15 L1050,75 L1200,30 L1200,80 L0,80 Z' fill='%231a0b38'/%3E%3C/svg%3E");
-  background-size: 100% 100%;
   margin: 0;
   position: relative;
-  z-index: 2;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent, #000 15%, #000 85%, transparent);
   pointer-events: none;
+}
+.wave-divider::before,
+.wave-divider::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 200%;
+  background: url("assets/wave-divider.svg?v=outline-2") repeat-x left center / 50% 100%;
+  animation: wave-scroll 24s linear infinite paused;
+}
+.wave-divider::after {
+  top: 12px;
+  bottom: -12px;
+  opacity: 0.45;
+  animation-duration: 34s;
+  animation-direction: reverse;
+  animation-delay: -11s;
+}
+.wave-divider.is-in-view::before,
+.wave-divider.is-in-view::after {
+  animation-play-state: running;
+}
+.ambient-motion-paused .wave-divider::before,
+.ambient-motion-paused .wave-divider::after,
+.wave-divider.is-page-hidden::before,
+.wave-divider.is-page-hidden::after {
+  animation-play-state: paused;
+}
+@keyframes wave-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wave-divider::before,
+  .wave-divider::after { animation: none; }
 }
 
 /* Staggered reveal for cards inside a grid */

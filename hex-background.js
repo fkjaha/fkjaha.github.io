@@ -1,4 +1,22 @@
-// A viewport-sized, decorative canvas. No assets or animation library required.
+// Shared decorative effects. Only visible waves animate; the canvas is viewport-sized.
+installWaveDividers();
+
+function installWaveDividers() {
+  const dividers = document.querySelectorAll(".wave-divider");
+  if (!dividers.length) return;
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      entry.target.classList.toggle("is-in-view", entry.isIntersecting);
+    }
+  });
+  dividers.forEach(divider => observer.observe(divider));
+  const updateVisibility = () => {
+    dividers.forEach(divider => divider.classList.toggle("is-page-hidden", document.hidden));
+  };
+  document.addEventListener("visibilitychange", updateVisibility);
+  updateVisibility();
+}
+
 const canvas = document.createElement("canvas");
 canvas.className = "ambient-background";
 canvas.setAttribute("aria-hidden", "true");
@@ -16,7 +34,7 @@ function installHexBackground() {
   toggle.type = "button";
   toggle.hidden = true;
   toggle.setAttribute("aria-pressed", "false");
-  toggle.textContent = "Pause glow";
+  toggle.textContent = "Pause effects";
   document.body.appendChild(toggle);
 
   const FRAME_MS = 1000 / 30;
@@ -187,7 +205,8 @@ function installHexBackground() {
   toggle.addEventListener("click", () => {
     paused = !paused;
     pointer.active = false;
-    toggle.textContent = paused ? "Resume glow" : "Pause glow";
+    toggle.textContent = paused ? "Resume effects" : "Pause effects";
+    document.body.classList.toggle("ambient-motion-paused", paused);
     toggle.setAttribute("aria-pressed", String(paused));
     requestDraw();
   });
