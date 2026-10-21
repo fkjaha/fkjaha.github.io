@@ -44,12 +44,12 @@
         {
           "title": "Totally Safe Moon Project",
           "steamAppId": "4339680",
-          "description": "BREAKING NEWS! A giant asteroid is about to destroy the Earth! The Moon is your last hope. Work together with friends to build a fragile tower from everyday objects.",
+          "description": "BREAKING NEWS! A giant asteroid is about to wipe out Earth, and your only escape is the Moon! Grab anything you can find, stack it high, and build your way to safety, solo or with up to 3 friends! Think Only Up, but YOU'RE the architect. What could possibly go wrong?",
           "genre": "Simulation",
           "genres": "Simulation",
           "developers": "Fake Moon",
-          "publishers": "Fake Moon",
-          "releaseDate": "Coming soon",
+          "publishers": "rokaplay select",
+          "releaseDate": "30 Oct, 2026",
           "media": {
             "header": "content/steam-media/upcoming/4339680-totally-safe-moon-project/header.jpg",
             "poster": "content/steam-media/upcoming/4339680-totally-safe-moon-project/capsule.jpg",
@@ -85,54 +85,22 @@
               {
                 "full": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-08.jpg",
                 "thumbnail": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-8-thumb.jpg"
-              }
-            ]
-          }
-        },
-        {
-          "title": "Reflectory",
-          "steamAppId": "4293890",
-          "description": "An idle incremental game about bouncing balls that lives in the corner of your screen.",
-          "genre": "Casual",
-          "genres": "Casual, Simulation",
-          "developers": "Fkjaha",
-          "publishers": "Fkjaha Games",
-          "releaseDate": "Q3 2026",
-          "media": {
-            "header": "content/steam-media/upcoming/4293890-reflectory/header.jpg",
-            "poster": "content/steam-media/upcoming/4293890-reflectory/capsule.jpg",
-            "screenshots": [
-              {
-                "full": "content/steam-media/upcoming/4293890-reflectory/screenshot-01.jpg",
-                "thumbnail": "content/steam-media/upcoming/4293890-reflectory/screenshot-1-thumb.jpg"
               },
               {
-                "full": "content/steam-media/upcoming/4293890-reflectory/screenshot-02.jpg",
-                "thumbnail": "content/steam-media/upcoming/4293890-reflectory/screenshot-2-thumb.jpg"
+                "full": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-09.jpg",
+                "thumbnail": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-9-thumb.jpg"
               },
               {
-                "full": "content/steam-media/upcoming/4293890-reflectory/screenshot-03.jpg",
-                "thumbnail": "content/steam-media/upcoming/4293890-reflectory/screenshot-3-thumb.jpg"
+                "full": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-10.jpg",
+                "thumbnail": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-10-thumb.jpg"
               },
               {
-                "full": "content/steam-media/upcoming/4293890-reflectory/screenshot-04.jpg",
-                "thumbnail": "content/steam-media/upcoming/4293890-reflectory/screenshot-4-thumb.jpg"
+                "full": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-11.jpg",
+                "thumbnail": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-11-thumb.jpg"
               },
               {
-                "full": "content/steam-media/upcoming/4293890-reflectory/screenshot-05.jpg",
-                "thumbnail": "content/steam-media/upcoming/4293890-reflectory/screenshot-5-thumb.jpg"
-              },
-              {
-                "full": "content/steam-media/upcoming/4293890-reflectory/screenshot-06.jpg",
-                "thumbnail": "content/steam-media/upcoming/4293890-reflectory/screenshot-6-thumb.jpg"
-              },
-              {
-                "full": "content/steam-media/upcoming/4293890-reflectory/screenshot-07.jpg",
-                "thumbnail": "content/steam-media/upcoming/4293890-reflectory/screenshot-7-thumb.jpg"
-              },
-              {
-                "full": "content/steam-media/upcoming/4293890-reflectory/screenshot-08.jpg",
-                "thumbnail": "content/steam-media/upcoming/4293890-reflectory/screenshot-8-thumb.jpg"
+                "full": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-12.jpg",
+                "thumbnail": "content/steam-media/upcoming/4339680-totally-safe-moon-project/screenshot-12-thumb.jpg"
               }
             ]
           }
@@ -196,6 +164,54 @@
               {
                 "full": "content/steam-media/pc/2838490-flashing-dark/screenshot-10.jpg",
                 "thumbnail": "content/steam-media/pc/2838490-flashing-dark/screenshot-10-thumb.jpg"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Reflectory Demo",
+          "steamAppId": "4321830",
+          "description": "An idle incremental game about bouncing balls that lives in the corner of your screen.",
+          "genre": "Casual",
+          "genres": "Casual, Simulation, Strategy",
+          "developers": "Fkjaha",
+          "publishers": "Fkjaha Games",
+          "releaseDate": "18 Feb, 2026",
+          "media": {
+            "header": "content/steam-media/pc/4321830-reflectory-demo/header.jpg",
+            "poster": "content/steam-media/pc/4321830-reflectory-demo/capsule.jpg",
+            "screenshots": [
+              {
+                "full": "content/steam-media/pc/4321830-reflectory-demo/screenshot-01.jpg",
+                "thumbnail": "content/steam-media/pc/4321830-reflectory-demo/screenshot-1-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/4321830-reflectory-demo/screenshot-02.jpg",
+                "thumbnail": "content/steam-media/pc/4321830-reflectory-demo/screenshot-2-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/4321830-reflectory-demo/screenshot-03.jpg",
+                "thumbnail": "content/steam-media/pc/4321830-reflectory-demo/screenshot-3-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/4321830-reflectory-demo/screenshot-04.jpg",
+                "thumbnail": "content/steam-media/pc/4321830-reflectory-demo/screenshot-4-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/4321830-reflectory-demo/screenshot-05.jpg",
+                "thumbnail": "content/steam-media/pc/4321830-reflectory-demo/screenshot-5-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/4321830-reflectory-demo/screenshot-06.jpg",
+                "thumbnail": "content/steam-media/pc/4321830-reflectory-demo/screenshot-6-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/4321830-reflectory-demo/screenshot-07.jpg",
+                "thumbnail": "content/steam-media/pc/4321830-reflectory-demo/screenshot-7-thumb.jpg"
+              },
+              {
+                "full": "content/steam-media/pc/4321830-reflectory-demo/screenshot-08.jpg",
+                "thumbnail": "content/steam-media/pc/4321830-reflectory-demo/screenshot-8-thumb.jpg"
               }
             ]
           }
