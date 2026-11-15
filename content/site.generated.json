@@ -41,7 +41,14 @@
       "title": "Upcoming Games",
       "description": "New releases and work in progress.",
       "items": [
-        {
+              ]
+    },
+    {
+      "id": "pc",
+      "title": "Released Games",
+      "description": "Released and announced PC projects.",
+      "items": [
+      {
           "title": "Totally Safe Moon Project",
           "steamAppId": "4339680",
           "description": "BREAKING NEWS! A giant asteroid is about to wipe out Earth, and your only escape is the Moon! Grab anything you can find, stack it high, and build your way to safety, solo or with up to 3 friends! Think Only Up, but YOU'RE the architect. What could possibly go wrong?",
@@ -104,14 +111,7 @@
               }
             ]
           }
-        }
-      ]
-    },
-    {
-      "id": "pc",
-      "title": "Released Games",
-      "description": "Released and announced PC projects.",
-      "items": [
+        },
         {
           "title": "Flashing Dark",
           "steamAppId": "2838490",
