@@ -41,17 +41,17 @@
       "title": "Upcoming Games",
       "description": "New releases and work in progress.",
       "items": [
-        {
-          "title": "Totally Safe Moon Project",
-          "steamAppId": "4339680"
-        }
-      ]
+              ]
     },
     {
       "id": "pc",
       "title": "Released Games",
       "description": "Released and announced PC projects.",
       "items": [
+        {
+          "title": "Totally Safe Moon Project",
+          "steamAppId": "4339680"
+        },
         {
           "title": "Flashing Dark",
           "steamAppId": "2838490"
